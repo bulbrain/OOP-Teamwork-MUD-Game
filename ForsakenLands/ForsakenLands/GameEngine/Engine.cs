@@ -1,7 +1,7 @@
 ﻿namespace ForsakenLands
 {
     using System;
-    public class Game
+    public class Engine
     {
         private bool running = true;
 
