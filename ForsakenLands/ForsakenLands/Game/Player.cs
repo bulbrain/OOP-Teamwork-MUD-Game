@@ -8,8 +8,8 @@ namespace ForsakenLands
 {
     public class Player
     {
-        private String name;
-        private String password;
+        private string name;
+        private string password;
 
         public Player(String name, String password)
         {
