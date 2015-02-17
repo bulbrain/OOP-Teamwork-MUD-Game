@@ -8,7 +8,6 @@
         public Item(int id, string name)
             : base(id)
         {
-
         }
 
         public string Name { get; set; }
