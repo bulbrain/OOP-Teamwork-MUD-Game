@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Security.Cryptography;
-
-namespace ForsakenLands
+﻿namespace ForsakenLands
 {
+    using System;
+    using System.Text;
+    using System.Security.Cryptography;
+
     public class MD5Password
     {
         public MD5Password(String input){}

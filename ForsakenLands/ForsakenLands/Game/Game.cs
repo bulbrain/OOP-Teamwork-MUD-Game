@@ -1,33 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using ForsakenLands;
-
-namespace ForsakenLands
+﻿namespace ForsakenLands
 {
+    using System;
     public class Game
     {
         private bool running = true;
 
-        public void startGame()
+        public void StartGame()
         {
             if (running)
             {
                 Console.WriteLine("YOU ARE ENTERED THE BATTLEFIELD OF FORSAKEN LANDS");
                 Console.WriteLine("Are you a new player? (Yes/No)");
-                String ans = Console.ReadLine();
-                String newPlayer = ans.ToLower();
+                string ans = Console.ReadLine();
+                string newPlayer = ans.ToLower();
 
                 while (true)
                 {
                     if (newPlayer == "yes")
                     {
                         Console.WriteLine("Enter your heroic name (min 3 symbols):");
-                        String heroName = Console.ReadLine();
+                        string heroName = Console.ReadLine();
                         Console.WriteLine("Enter your epic password (min 6 symbols):");
 
-                        String heroPassword = "";
+                        string heroPassword = "";
                         ConsoleKeyInfo info = Console.ReadKey(true);
                         while (info.Key != ConsoleKey.Enter)
                         {
@@ -51,7 +46,7 @@ namespace ForsakenLands
                         Console.Write(" Your password is with " + heroPassword.Length + " symbols.");
                         Console.WriteLine(" Do you want to continue? (Yes/No)");
                         ans = Console.ReadLine();
-                        String createUser = ans.ToLower();
+                        string createUser = ans.ToLower();
                         //String heroPassword = Console.ReadLine();
                         if (createUser == "yes")
                         {
@@ -65,9 +60,9 @@ namespace ForsakenLands
                     else if (newPlayer == "no")
                     {
                         Console.WriteLine("Enter your hero's name:");
-                        String userName = Console.ReadLine();
+                        string userName = Console.ReadLine();
                         Console.WriteLine("Enter your epic password:");
-                        String password = Console.ReadLine();
+                        string password = Console.ReadLine();
                     }
                     else
                         Console.WriteLine("You entered undefined symbols. Please enter yes or no!");

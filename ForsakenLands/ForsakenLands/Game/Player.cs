@@ -1,23 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Security.Cryptography;
-
-namespace ForsakenLands
+﻿namespace ForsakenLands
 {
+    using System;
     public class Player
     {
         private string name;
         private string password;
 
-        public Player(String name, String password)
+        public Player(string name, string password)
         {
             this.Name = name;
             this.Password = password;
         }
 
-        public String Name 
+        public string Name 
         { 
             get
             {
@@ -25,14 +20,14 @@ namespace ForsakenLands
             }
             set
             {
-                if (String.IsNullOrEmpty(value) || value.Length < 3)
+                if (string.IsNullOrEmpty(value) || value.Length < 3)
 	            {
 		            throw new ArgumentNullException("asd"); //it's not finished!!! 
 	            }
                 this.name = value;
             }
         }
-        public String Password
+        public string Password
         {
             get
             {
@@ -40,9 +35,9 @@ namespace ForsakenLands
             }
             set
             {
-                if (String.IsNullOrEmpty(value) || value.Length < 6)
+                if (string.IsNullOrEmpty(value) || value.Length < 6)
 	            {
-		            throw new ArgumentNullException("not enought symbols");
+		            throw new ArgumentNullException("not enough symbols");
 	            }
                 // MD5Password hashedPassword = new MD5Password(value); Don't know how to use it. The class should work fine.
                 this.name = value;
