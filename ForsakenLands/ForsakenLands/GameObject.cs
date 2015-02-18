@@ -1,6 +1,5 @@
 ﻿namespace ForsakenLands
 {
-
     public abstract class GameObject
     {
         private int id;

@@ -1,6 +1,7 @@
 ﻿namespace ForsakenLands.Items
 {
     using ForsakenLands;
+
     public abstract class Item : GameObject
     {
         private string name;
