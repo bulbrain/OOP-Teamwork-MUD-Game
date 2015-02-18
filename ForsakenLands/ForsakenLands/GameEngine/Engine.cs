@@ -65,7 +65,12 @@
                         string password = Console.ReadLine();
                     }
                     else
+                    {
                         Console.WriteLine("You entered undefined symbols. Please enter yes or no!");
+                        ans = Console.ReadLine();
+                        newPlayer = ans.ToLower();
+                    }
+                        
                 }
             }
             
