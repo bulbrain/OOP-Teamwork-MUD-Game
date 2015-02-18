@@ -48,8 +48,10 @@
     <Compile Include="GameEngine\Engine.cs" />
     <Compile Include="GameEngine\MD5Password.cs" />
     <Compile Include="GameEngine\Player.cs" />
+    <Compile Include="GameEngine\Room.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="Items\Item.cs" />
+    <Compile Include="Items\Weapon.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
