@@ -8,7 +8,7 @@
          }
 
          public uint Id { get; private set; }
-         public string RoomDescription { get; private set; }
+         public string Name { get; private set; } // This will be later on derived from base class
 
          public uint SouthExit { get; private set; }
          public uint NorthExit { get; private set; }
