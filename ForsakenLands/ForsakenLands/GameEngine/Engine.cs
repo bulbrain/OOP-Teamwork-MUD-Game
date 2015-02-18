@@ -1,13 +1,14 @@
-﻿namespace ForsakenLands
+﻿namespace ForsakenLands.GameEngine
 {
     using System;
+
     public class Engine
     {
         private bool running = true;
 
         public void StartGame()
         {
-            if (running)
+            if (this.running)
             {
                 Console.WriteLine("YOU ARE ENTERED THE BATTLEFIELD OF FORSAKEN LANDS");
                 Console.WriteLine("Are you a new player? (Yes/No)");
@@ -22,7 +23,7 @@
                         string heroName = Console.ReadLine();
                         Console.WriteLine("Enter your epic password (min 6 symbols):");
 
-                        string heroPassword = "";
+                        string heroPassword = string.Empty;
                         ConsoleKeyInfo info = Console.ReadKey(true);
                         while (info.Key != ConsoleKey.Enter)
                         {
@@ -35,25 +36,34 @@
                             {
                                 if (!string.IsNullOrEmpty(heroPassword))
                                 {
-                                    heroPassword = heroPassword.Substring
-                                    (0, heroPassword.Length - 1);
+                                    heroPassword =
+                                        heroPassword.Substring(0, heroPassword.Length - 1);
                                 }
+
                                 info = Console.ReadKey(true);
                             }
                         }
+
                         for (int i = 0; i < heroPassword.Length; i++)
+                        {
                             Console.Write("*");
+                        }
+
                         Console.Write(" Your password is with " + heroPassword.Length + " symbols.");
                         Console.WriteLine(" Do you want to continue? (Yes/No)");
                         ans = Console.ReadLine();
                         string createUser = ans.ToLower();
-                        //String heroPassword = Console.ReadLine();
+
+                        // String heroPassword = Console.ReadLine();
                         if (createUser == "yes")
                         {
                             Player player = new Player(heroName, heroPassword);
                         }
                         else
-                            Console.WriteLine("Do you want to exit?"); // unfinished loop!!! 
+                        {
+                            // unfinished loop!!!
+                            Console.WriteLine("Do you want to exit?");
+                        }
 
                         break;
                     }
@@ -67,16 +77,16 @@
                     else
                     {
                         Console.WriteLine("You entered undefined symbols. Please enter yes or no!");
+<<<<<<< HEAD
                         ans = Console.ReadLine();
                         newPlayer = ans.ToLower();
                     }
                         
+=======
+                    }
+>>>>>>> 5bdda71257a1d77ead4e16bbedcf1543314b68da
                 }
             }
-            
-          
-            
         }
     }
-
 }
