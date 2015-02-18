@@ -1,8 +1,9 @@
 ﻿namespace ForsakenLands.Characters
 {
+    using System.Collections.Generic;
+
     using ForsakenLands;
     using ForsakenLands.Items;
-    using System.Collections.Generic;
 
     public abstract class Character : GameObject
     {
@@ -25,7 +26,6 @@
             List<Item> itemInventory)
             : base(id)
         {
-
         }
     }
 }

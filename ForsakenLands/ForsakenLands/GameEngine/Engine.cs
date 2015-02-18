@@ -77,14 +77,14 @@
                     else
                     {
                         Console.WriteLine("You entered undefined symbols. Please enter yes or no!");
-<<<<<<< HEAD
+
                         ans = Console.ReadLine();
                         newPlayer = ans.ToLower();
                     }
                         
-=======
-                    }
->>>>>>> 5bdda71257a1d77ead4e16bbedcf1543314b68da
+
+                    
+
                 }
             }
         }

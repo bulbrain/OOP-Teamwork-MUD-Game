@@ -1,4 +1,4 @@
-﻿﻿namespace ForsakenLands
+﻿﻿namespace ForsakenLands.GameEngine
  {
      public class Room
      {

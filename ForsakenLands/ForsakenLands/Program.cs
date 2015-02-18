@@ -1,5 +1,7 @@
 ﻿namespace ForsakenLands
 {
+    using ForsakenLands.GameEngine;
+
     class Program
     {
         static void Main(string[] args)

@@ -1,7 +1,8 @@
 ﻿namespace ForsakenLands.Characters
 {
-    using ForsakenLands.Items;
     using System.Collections.Generic;
+
+    using ForsakenLands.Items;
 
     public class Warrior : Character
     {
@@ -16,7 +17,6 @@
             List<Item> itemInventory)
             : base(id, attackPoints, defencePoints, healthPoints, accuracy, evasion, range, itemInventory)
         {
-
         }
     }
 }

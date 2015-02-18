@@ -1,6 +1,7 @@
-﻿namespace ForsakenLands
+﻿namespace ForsakenLands.GameEngine
 {
     using System;
+
     public class Player
     {
         private string name;
@@ -18,15 +19,18 @@
             {
                 return this.name;
             }
+
             set
             {
                 if (string.IsNullOrEmpty(value) || value.Length < 3)
-	            {
-		            throw new ArgumentNullException("asd"); //it's not finished!!! 
-	            }
+                {
+                    throw new ArgumentNullException("asd"); // it's not finished!!! 
+                }
+
                 this.name = value;
             }
         }
+
         public string Password
         {
             get
@@ -36,16 +40,13 @@
             set
             {
                 if (string.IsNullOrEmpty(value) || value.Length < 6)
-	            {
-		            throw new ArgumentNullException("not enough symbols");
-	            }
+                {
+                    throw new ArgumentNullException("not enough symbols");
+                }
+
                 // MD5Password hashedPassword = new MD5Password(value); Don't know how to use it. The class should work fine.
                 this.name = value;
             }   
-                   
         }
-            
-
-
     }
 }
