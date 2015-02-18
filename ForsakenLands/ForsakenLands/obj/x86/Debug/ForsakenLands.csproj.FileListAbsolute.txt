@@ -1,9 +1,0 @@
-C:\Users\georgi.a.stoyanov\Documents\GitHub\OOP-Teamwork-MUD-Game\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.csprojResolveAssemblyReference.cache
-C:\Users\georgi.a.stoyanov\Documents\GitHub\OOP-Teamwork-MUD-Game\ForsakenLands\ForsakenLands\bin\Debug\ForsakenLands.exe
-C:\Users\georgi.a.stoyanov\Documents\GitHub\OOP-Teamwork-MUD-Game\ForsakenLands\ForsakenLands\bin\Debug\ForsakenLands.pdb
-C:\Users\georgi.a.stoyanov\Documents\GitHub\OOP-Teamwork-MUD-Game\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.exe
-C:\Users\georgi.a.stoyanov\Documents\GitHub\OOP-Teamwork-MUD-Game\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.pdb
-F:\_Programming\_Code\SoftUni\OOP\Teamwork\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.exe
-F:\_Programming\_Code\SoftUni\OOP\Teamwork\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.pdb
-D:\Git\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.exe
-D:\Git\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.pdb
