@@ -1,10 +1,11 @@
-﻿namespace ForsakenLands.Characters
+﻿using System;
+using System.Collections.Generic;
+
+using ForsakenLands;
+using ForsakenLands.Items;
+
+namespace ForsakenLands.Characters
 {
-    using System.Collections.Generic;
-
-    using ForsakenLands;
-    using ForsakenLands.Items;
-
     public abstract class Character : GameObject
     {
         private int attackPoints;
@@ -23,9 +24,113 @@
             int accuracy,
             int evasion,
             int range,
-            List<Item> itemInventory)
+            List<Item> itemInventory = null)
             : base(id)
         {
+            this.AttackPoints = attackPoints;
+            this.DefencePoints = defencePoints;
+            this.HealthPoints = healthPoints;
+            this.Accuaracy = accuracy;
+            this.Evasion = evasion;
+            this.Range = range;
+            this.ItemInventory = itemInventory;
+        }
+
+        public int AttackPoints 
+        { 
+            get { return this.attackPoints; }
+            set 
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentNullException("The atack points can't be negative!");
+                }
+                this.attackPoints = value;
+            }
+        }
+
+        public int DefencePoints
+        {
+            get { return this.defencePoints; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentNullException("The defense points can't be negative!");
+                }
+                this.defencePoints = value;
+            }
+        }
+
+        public int HealthPoints
+        {
+            get { return this.healthPoints; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentNullException("The health points can't be negative!");
+                }
+                this.healthPoints = value;
+            }
+        }
+
+        public int Accuaracy 
+        {
+            get { return this.accuracy; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentNullException("The accuracy can't be negative!");
+                }
+
+                this.accuracy = value;
+            }
+        }
+
+        public int Evasion
+        {
+            get { return this.evasion; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentNullException("The evasion can't be negative!");
+                }
+
+                this.evasion = value;
+            }
+        }
+
+        public int Range
+        {
+            get { return this.range; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentNullException("The range can't be negative!");
+                }
+
+                this.range = value;
+            }
+        }
+
+        public List<Item> ItemInventory 
+        {
+            get { return this.itemInventory; }
+            set
+            {
+                if (value == null)
+                {
+                    this.itemInventory = new List<Item>();
+                }
+                else
+                {
+                    this.itemInventory = value;
+                }
+            }
         }
     }
 }
