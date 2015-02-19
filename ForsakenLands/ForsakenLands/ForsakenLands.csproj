@@ -64,6 +64,7 @@
     <Compile Include="GameEngine\MD5Password.cs" />
     <Compile Include="GameEngine\Player.cs" />
     <Compile Include="GameEngine\Room.cs" />
+    <Compile Include="GameEngine\RoomType.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="Items\Item.cs" />
     <Compile Include="Items\Weapon.cs" />
