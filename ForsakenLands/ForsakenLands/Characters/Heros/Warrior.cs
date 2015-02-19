@@ -3,8 +3,9 @@
     using System.Collections.Generic;
 
     using ForsakenLands.Items;
+    using ForsakenLands.Characters.Heros;
 
-    public class Warrior : Character
+    public class Warrior : Hero
     {
         public Warrior(
             int id,
@@ -17,6 +18,16 @@
             List<Item> itemInventory)
             : base(id, attackPoints, defencePoints, healthPoints, accuracy, evasion, range, itemInventory)
         {
+        }
+
+        public override void AddItemToInventory(Item item)
+        {
+
+        }
+
+        public override void RemoveItemFromInventory(Item item)
+        {
+
         }
     }
 }

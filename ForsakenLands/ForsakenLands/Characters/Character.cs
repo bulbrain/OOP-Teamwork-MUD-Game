@@ -14,7 +14,6 @@ namespace ForsakenLands.Characters
         private int accuracy;
         private int evasion;
         private int range;
-        private List<Item> itemInventory;
 
         public Character(
             int id,
@@ -23,8 +22,7 @@ namespace ForsakenLands.Characters
             int healthPoints,
             int accuracy,
             int evasion,
-            int range,
-            List<Item> itemInventory = null)
+            int range)
             : base(id)
         {
             this.AttackPoints = attackPoints;
@@ -33,7 +31,6 @@ namespace ForsakenLands.Characters
             this.Accuaracy = accuracy;
             this.Evasion = evasion;
             this.Range = range;
-            this.ItemInventory = itemInventory;
         }
 
         public int AttackPoints 
@@ -114,22 +111,6 @@ namespace ForsakenLands.Characters
                 }
 
                 this.range = value;
-            }
-        }
-
-        public List<Item> ItemInventory 
-        {
-            get { return this.itemInventory; }
-            set
-            {
-                if (value == null)
-                {
-                    this.itemInventory = new List<Item>();
-                }
-                else
-                {
-                    this.itemInventory = value;
-                }
             }
         }
     }

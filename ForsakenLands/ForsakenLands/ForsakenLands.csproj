@@ -58,14 +58,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Characters\Heros\Assassin.cs" />
     <Compile Include="Characters\Character.cs" />
-    <Compile Include="Characters\Warrior.cs" />
+    <Compile Include="Characters\Hero.cs" />
+    <Compile Include="Characters\Heros\Mage.cs" />
+    <Compile Include="Characters\Heros\Warrior.cs" />
+    <Compile Include="Characters\Monster.cs" />
+    <Compile Include="Characters\Monsters\Dragon.cs" />
+    <Compile Include="Characters\Monsters\Vampire.cs" />
+    <Compile Include="Characters\Monsters\Wolf.cs" />
     <Compile Include="GameEngine\Engine.cs" />
     <Compile Include="GameEngine\MD5Password.cs" />
     <Compile Include="GameEngine\Player.cs" />
     <Compile Include="GameEngine\Room.cs" />
     <Compile Include="GameEngine\RoomType.cs" />
     <Compile Include="GameObject.cs" />
+    <Compile Include="Interfaces\IInventoriable.cs" />
+    <Compile Include="Interfaces\IRegenerable.cs" />
     <Compile Include="Items\Item.cs" />
     <Compile Include="Items\Weapon.cs" />
     <Compile Include="Program.cs" />
@@ -92,6 +101,10 @@
       <ProductName>Windows Installer 4.5</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
