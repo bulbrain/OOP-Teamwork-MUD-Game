@@ -7,6 +7,7 @@
         private string name;
         private string password;
 
+        
         public Player(string name, string password)
         {
             this.Name = name;
@@ -22,10 +23,12 @@
 
             set
             {
-                if (string.IsNullOrEmpty(value) || value.Length < 3)
-                {
-                    throw new ArgumentNullException("asd"); // it's not finished!!! 
-                }
+                
+                    if (string.IsNullOrEmpty(value) || value.Length < 3)
+                    {
+                        throw new ArgumentNullException();  
+                    }
+                
 
                 this.name = value;
             }
@@ -45,7 +48,7 @@
                 }
 
                 // MD5Password hashedPassword = new MD5Password(value); Don't know how to use it. The class should work fine.
-                this.name = value;
+                this.password = value;
             }   
         }
     }
