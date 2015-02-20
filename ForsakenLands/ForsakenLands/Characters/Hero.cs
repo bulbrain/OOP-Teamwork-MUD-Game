@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-
-using ForsakenLands;
-using ForsakenLands.Items;
-using ForsakenLands.Interfaces;
-
-namespace ForsakenLands.Characters.Heros
+﻿namespace ForsakenLands.Characters
 {
+    using System.Collections.Generic;
+
+    using ForsakenLands.Interfaces;
+    using ForsakenLands.Items;
+
     public abstract class Hero : Character, IInventoriable
     {
         private List<Item> itemInventory;

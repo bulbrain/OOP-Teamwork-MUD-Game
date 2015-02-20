@@ -1,11 +1,7 @@
-﻿using ForsakenLands.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace ForsakenLands.Characters
+﻿namespace ForsakenLands.Characters
 {
+    using ForsakenLands.Interfaces;
+
     public class Monster : Character, IRegenerable
     {
         public Monster(

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-
-using ForsakenLands;
-using ForsakenLands.Items;
-using ForsakenLands.Characters.Heros;
-
-namespace ForsakenLands.Characters
+﻿namespace ForsakenLands.Characters.Heros
 {
+    using System.Collections.Generic;
+
+    using ForsakenLands.Items;
+
     public class Assassin : Hero
     {
         public Assassin(
@@ -25,12 +22,10 @@ namespace ForsakenLands.Characters
 
         public override void AddItemToInventory(Item item)
         {
-
         }
 
         public override void RemoveItemFromInventory(Item item)
         {
-
         }
     }
 }

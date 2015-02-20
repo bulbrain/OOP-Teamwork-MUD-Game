@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace ForsakenLands.Items.Armor
+﻿namespace ForsakenLands.Items.Armor
 {
-    class Boots : Item
+    public class Boots : Item
     {
         private int defencePoints;
 

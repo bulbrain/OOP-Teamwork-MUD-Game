@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace ForsakenLands.Items.Potion
+﻿namespace ForsakenLands.Items.Potion
 {
-    class HealPotion : Item
+    public class HealPotion : Item
     {
-
-        int healthPoints;
+        private int healthPoints;
+        
         public HealPotion(int id, string name, int healthPoints)
             : base(id, name)
         {

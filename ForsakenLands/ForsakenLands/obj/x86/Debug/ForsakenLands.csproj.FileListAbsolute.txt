@@ -5,3 +5,10 @@ C:\Users\Georgi\Desktop\Нова папка\trunk\ForsakenLands\ForsakenLands\ob
 C:\Users\Georgi\Desktop\Нова папка\trunk\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.pdb
 C:\Users\Georgi\Desktop\Нова папка\trunk\ForsakenLands\ForsakenLands\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Georgi\Desktop\Нова папка\trunk\ForsakenLands\ForsakenLands\bin\Debug\Newtonsoft.Json.xml
+C:\Me\SoftUni Nakov\000 Lectures\My-SoftUni-Projects\TeamWork\05.OOP-ForsakenLands\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.exe
+C:\Me\SoftUni Nakov\000 Lectures\My-SoftUni-Projects\TeamWork\05.OOP-ForsakenLands\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.pdb
+C:\Me\SoftUni Nakov\000 Lectures\My-SoftUni-Projects\TeamWork\05.OOP-ForsakenLands\ForsakenLands\ForsakenLands\bin\Debug\ForsakenLands.exe
+C:\Me\SoftUni Nakov\000 Lectures\My-SoftUni-Projects\TeamWork\05.OOP-ForsakenLands\ForsakenLands\ForsakenLands\bin\Debug\ForsakenLands.pdb
+C:\Me\SoftUni Nakov\000 Lectures\My-SoftUni-Projects\TeamWork\05.OOP-ForsakenLands\ForsakenLands\ForsakenLands\bin\Debug\Newtonsoft.Json.dll
+C:\Me\SoftUni Nakov\000 Lectures\My-SoftUni-Projects\TeamWork\05.OOP-ForsakenLands\ForsakenLands\ForsakenLands\bin\Debug\Newtonsoft.Json.xml
+C:\Me\SoftUni Nakov\000 Lectures\My-SoftUni-Projects\TeamWork\05.OOP-ForsakenLands\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.csprojResolveAssemblyReference.cache

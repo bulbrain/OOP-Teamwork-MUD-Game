@@ -1,9 +1,8 @@
-﻿namespace ForsakenLands.Characters
+﻿namespace ForsakenLands.Characters.Heros
 {
     using System.Collections.Generic;
 
     using ForsakenLands.Items;
-    using ForsakenLands.Characters.Heros;
 
     public class Warrior : Hero
     {

@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace ForsakenLands.Items.Weapon
+﻿namespace ForsakenLands.Items.Weapon
 {
-    class Dagger : Item
+    public class Dagger : Item
     {
         private int attackPoints;
 

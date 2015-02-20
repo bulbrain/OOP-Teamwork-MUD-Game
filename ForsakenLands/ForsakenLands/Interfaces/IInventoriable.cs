@@ -1,9 +1,10 @@
-﻿using ForsakenLands.Items;
-using System.Collections.Generic;
-
-namespace ForsakenLands.Interfaces
+﻿namespace ForsakenLands.Interfaces
 {
-    interface IInventoriable
+    using System.Collections.Generic;
+
+    using ForsakenLands.Items;
+
+    public interface IInventoriable
     {
         List<Item> ItemInventory { get; set; }
 

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-
-using ForsakenLands;
-using ForsakenLands.Items;
-using ForsakenLands.Characters.Heros;
-
-namespace ForsakenLands.Characters
+﻿namespace ForsakenLands.Characters.Heros
 {
+    using System.Collections.Generic;
+
+    using ForsakenLands.Items;
+
     public class Mage : Hero
     {
         public Mage(

@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-
-using ForsakenLands;
-using ForsakenLands.Items;
-
-namespace ForsakenLands.Characters
+﻿namespace ForsakenLands.Characters
 {
+    using System;
+
+    using ForsakenLands;
+
     public abstract class Character : GameObject
     {
         private int attackPoints;
@@ -45,6 +43,7 @@ namespace ForsakenLands.Characters
                 {
                     throw new ArgumentNullException("The atack points can't be negative!");
                 }
+
                 this.attackPoints = value;
             }
         }
@@ -56,8 +55,9 @@ namespace ForsakenLands.Characters
             {
                 if (value < 0)
                 {
-                    throw new ArgumentNullException("The defense points can't be negative!");
+                    throw new ArgumentNullException("value", "The defense points can't be negative!");
                 }
+
                 this.defencePoints = value;
             }
         }
@@ -69,8 +69,9 @@ namespace ForsakenLands.Characters
             {
                 if (value < 0)
                 {
-                    throw new ArgumentNullException("The health points can't be negative!");
+                    throw new ArgumentNullException("value", "The health points can't be negative!");
                 }
+
                 this.healthPoints = value;
             }
         }
@@ -82,8 +83,9 @@ namespace ForsakenLands.Characters
             {
                 if (value < 0)
                 {
-                    throw new ArgumentNullException("The mana points can't be negative!");
+                    throw new ArgumentNullException("value", "The mana points can't be negative!");
                 }
+
                 this.manaPoints = value;
             }
         }
@@ -95,7 +97,7 @@ namespace ForsakenLands.Characters
             {
                 if (value < 0)
                 {
-                    throw new ArgumentNullException("The accuracy can't be negative!");
+                    throw new ArgumentNullException("value", "The accuracy can't be negative!");
                 }
 
                 this.accuracy = value;
@@ -109,7 +111,7 @@ namespace ForsakenLands.Characters
             {
                 if (value < 0)
                 {
-                    throw new ArgumentNullException("The evasion can't be negative!");
+                    throw new ArgumentNullException("value", "The evasion can't be negative!");
                 }
 
                 this.evasion = value;
@@ -123,7 +125,7 @@ namespace ForsakenLands.Characters
             {
                 if (value < 0)
                 {
-                    throw new ArgumentNullException("The range can't be negative!");
+                    throw new ArgumentNullException("value", "The range can't be negative!");
                 }
 
                 this.range = value;

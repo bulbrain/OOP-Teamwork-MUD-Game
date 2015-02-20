@@ -1,4 +1,4 @@
-﻿namespace ForsakenLands.Items
+﻿namespace ForsakenLands.Items.Weapon
 {
     public class Sword : Item
     {
