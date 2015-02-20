@@ -11,6 +11,7 @@ namespace ForsakenLands.Characters
         private int attackPoints;
         private int defencePoints;
         private int healthPoints;
+        private int manaPoints;
         private int accuracy;
         private int evasion;
         private int range;
@@ -20,6 +21,7 @@ namespace ForsakenLands.Characters
             int attackPoints,
             int defencePoints,
             int healthPoints,
+            int manaPoints,
             int accuracy,
             int evasion,
             int range)
@@ -28,6 +30,7 @@ namespace ForsakenLands.Characters
             this.AttackPoints = attackPoints;
             this.DefencePoints = defencePoints;
             this.HealthPoints = healthPoints;
+            this.ManaPoints = manaPoints;
             this.Accuaracy = accuracy;
             this.Evasion = evasion;
             this.Range = range;
@@ -69,6 +72,19 @@ namespace ForsakenLands.Characters
                     throw new ArgumentNullException("The health points can't be negative!");
                 }
                 this.healthPoints = value;
+            }
+        }
+
+        public int ManaPoints
+        {
+            get { return this.manaPoints; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentNullException("The mana points can't be negative!");
+                }
+                this.manaPoints = value;
             }
         }
 

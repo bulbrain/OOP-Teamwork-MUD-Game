@@ -10,6 +10,7 @@ namespace ForsakenLands.Characters.Monsters
         private const int WOLF_DEFAULT_ATTACK_POINTS = 200;
         private const int WOLF_DEFAULT_DEFENCE_POINTS = 200;
         private const int WOLF_DEFAULT_HEALTH_POINTS = 150;
+        private const int WOLF_DEFAULT_MANA_POINTS = 100;
         private const int WOLF_DEFAULT_ACCURACY = 9;
         private const int WOLF_DEFAULT_EVASION = 2;
         private const int WOLF_DEFAULT_RANGE = 2;
@@ -17,7 +18,8 @@ namespace ForsakenLands.Characters.Monsters
 
         public Wolf (int id) : base(id, WOLF_DEFAULT_ATTACK_POINTS, 
                                         WOLF_DEFAULT_DEFENCE_POINTS, 
-                                        WOLF_DEFAULT_HEALTH_POINTS, 
+                                        WOLF_DEFAULT_HEALTH_POINTS,
+                                        WOLF_DEFAULT_MANA_POINTS,
                                         WOLF_DEFAULT_ACCURACY, 
                                         WOLF_DEFAULT_EVASION, 
                                         WOLF_DEFAULT_RANGE, 

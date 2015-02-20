@@ -13,11 +13,12 @@ namespace ForsakenLands.Characters
             int attackPoints,
             int defencePoints,
             int healthPoints,
+            int manaPoints,
             int accuracy,
             int evasion,
             int range,
             int lives)
-            : base(id, attackPoints, defencePoints, healthPoints, accuracy, evasion, range)
+            : base(id, attackPoints, defencePoints, healthPoints, manaPoints, accuracy, evasion, range)
         {
             this.Lives = lives;
         }

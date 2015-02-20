@@ -13,12 +13,13 @@ namespace ForsakenLands.Characters
             int id,
             int attackPoints,
             int defencePoints,
+            int manaPoints,
             int healthPoints,
             int accuracy,
             int evasion,
             int range,
             List<Item> itemInventory)
-            : base(id, attackPoints, defencePoints, healthPoints, accuracy, evasion, range, itemInventory)
+            : base(id, attackPoints, defencePoints, healthPoints, manaPoints, accuracy, evasion, range, itemInventory)
         {
         }
 
