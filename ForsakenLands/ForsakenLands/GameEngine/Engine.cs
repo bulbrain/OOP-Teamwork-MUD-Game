@@ -1,9 +1,7 @@
-﻿namespace ForsakenLands.GameEngine
-{
-    using System;
-    using System.IO;
-    using Newtonsoft.Json;
+﻿using System;
 
+namespace ForsakenLands.GameEngine
+{
     public class Engine
     {
         private bool running = true;
@@ -13,78 +11,74 @@
             if (this.running)
             {
                 Console.WriteLine("YOU ARE ENTERED THE BATTLEFIELD OF FORSAKEN LANDS");
-                Console.WriteLine("Are you a new player? (Yes/No)");
-                string ans = Console.ReadLine();
-                string newPlayer = ans.ToLower();
+                PlayerType playerType = this.GetPlayerType();
 
-                if (newPlayer == "yes")
+                bool wantsToContinue = true;
+                bool isCorrectPlayer = false;
+
+                while (wantsToContinue && !isCorrectPlayer)
                 {
-                    string heroName = string.Empty;
-                    string heroPassword = string.Empty;
-                    string ansTolower = string.Empty;
-
-                    Console.WriteLine("Enter your heroic name (min 3 symbols):");
-                    heroName = Console.ReadLine();
-                    Console.WriteLine("Enter your epic password (min 6 symbols):");
-                    heroPassword = Console.ReadLine();
-                    Console.WriteLine("Your desired name is: {0} and your password is: {1}.", heroName, heroPassword);
-                    Console.WriteLine("Do you want to continue? (Yes/No)");
-                    ans = Console.ReadLine();
-                    ansTolower = ans.ToLower();
-
-                    // get filecount to increase player numbers
-                    int fileCount = Directory.GetFiles(@"\..\Git\ForsakenLands\ForsakenLands\bin\Release\").Length;
-                    string playerNumber = "player" + fileCount.ToString();
-
-                    while (true)
+                    string[] inputs = this.EnterUserNameAndPassword();
+                    isCorrectPlayer = Player.IsCorrectPlayer(inputs[0], inputs[1], playerType);
+                    if (!isCorrectPlayer)
                     {
-                        if (ansTolower == "yes")
-                        {
-                            try
-                            {
-                                Player player = new Player(heroName, heroPassword);
-                                File.WriteAllText(@"\..\Git\ForsakenLands\ForsakenLands\bin\Release\" + playerNumber + ".json", JsonConvert.SerializeObject(player));
-                                break;
-                            }
-                            catch (ArgumentNullException)
-                            {
-                                Console.WriteLine("The hero name must be at least 3 symbols and the password must be at least 6 symbols.");
-                                Console.WriteLine("Please enter correct ones.");
-                                Console.WriteLine("Enter your heroic name (min 3 symbols):");
-                                heroName = Console.ReadLine();
-                                Console.WriteLine("Enter your epic password (min 6 symbols):");
-                                heroPassword = Console.ReadLine();
-                                continue;
-                            }
-                        }
-                        else
-                        {
-                            Console.WriteLine("Do you want to quit? (Yes/No)");
-                            ans = Console.ReadLine();
-                            ansTolower = ans.ToLower();
-
-                            if (ansTolower == "yes")
-                            {
-                                break;
-                            }
-                        }
+                        wantsToContinue = this.WantsToContinue();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Your account with heroic name: {0} and epic password: {1} was created.", inputs[0], inputs[1]);
                     }
                 }
-                else if (newPlayer == "no")
-                {
-                    Console.WriteLine("Enter your hero's name:");
-                    string userName = Console.ReadLine();
-                    Console.WriteLine("Enter your epic password:");
-                    string password = Console.ReadLine();
-                }
-                else
-                {
-                    Console.WriteLine("You entered undefined symbols. Please enter yes or no!");
 
-                    ans = Console.ReadLine();
-                    newPlayer = ans.ToLower();
+                if (!wantsToContinue)
+                {
+                    Console.WriteLine("GoodBye");
                 }
+
+                Console.ReadLine();
+                //To do next steps
             }
+        }
+
+        private PlayerType GetPlayerType()
+        {
+            string answer;
+            do
+            {
+                Console.WriteLine("Are you a new player? (Yes/No)");
+                answer = Console.ReadLine();
+            } while (answer.ToLower() != "no" && answer.ToLower() != "yes");
+
+            if (answer.ToLower() == "no")
+            {
+                return PlayerType.Old;
+            }
+
+            return PlayerType.New;
+        }
+
+        private string[] EnterUserNameAndPassword()
+        {
+            Console.WriteLine("Enter your heroic name (min 3 symbols):");
+            string heroName = Console.ReadLine();
+            Console.WriteLine("Enter your epic password (min 6 symbols):");
+            string heroPassword = Console.ReadLine();
+            return new string[] { heroName, heroPassword };
+        }
+
+        private bool WantsToContinue()
+        {
+            string answer;
+            do {
+                Console.WriteLine("Do you want to continue? (Yes/No)");
+                answer = Console.ReadLine();
+                if (answer.ToLower() == "yes")
+                {
+                    return true;
+                }
+            } while (answer.ToLower() != "no");
+
+            return false;
         }
     }
 }

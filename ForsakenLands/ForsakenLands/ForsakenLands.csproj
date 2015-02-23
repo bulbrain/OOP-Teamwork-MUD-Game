@@ -74,6 +74,7 @@
     <Compile Include="GameEngine\Engine.cs" />
     <Compile Include="GameEngine\MD5Password.cs" />
     <Compile Include="GameEngine\Player.cs" />
+    <Compile Include="GameEngine\PlayerType.cs" />
     <Compile Include="GameEngine\Room.cs" />
     <Compile Include="GameEngine\RoomType.cs" />
     <Compile Include="GameObject.cs" />
