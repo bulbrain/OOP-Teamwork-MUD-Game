@@ -4,13 +4,9 @@
     using System.Security.Cryptography;
     using System.Text;
 
-    public class MD5Password
+    public static class MD5Password
     {
-        public MD5Password(string input)
-        {
-        }
-
-        public string GetMd5Hash(string input)
+        public static string GetMd5Hash(string input)
         {
             // Create a new instance of the MD5CryptoServiceProvider object.
             MD5 md5Hasher = MD5.Create();
@@ -34,10 +30,10 @@
         }
 
         // Verify a hash against a string.
-        public bool VerifyMd5Hash(string input, string hash)
+        public static bool VerifyMd5Hash(string input, string hash)
         {
             // Hash the input.
-            string hashOfInput = this.GetMd5Hash(input);
+            string hashOfInput = MD5Password.GetMd5Hash(input);
 
             // Create a StringComparer an compare the hashes.
             StringComparer comparer = StringComparer.OrdinalIgnoreCase;

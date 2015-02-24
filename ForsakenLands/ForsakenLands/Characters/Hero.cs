@@ -4,8 +4,10 @@
 
     using ForsakenLands.Interfaces;
     using ForsakenLands.Items;
+    using ForsakenLands.Characters.Heros;
+    using System;
 
-    public abstract class Hero : Character, IInventoriable
+    public class Hero : Character, IInventoriable
     {
         private List<Item> itemInventory;
 
@@ -40,8 +42,34 @@
             }
         }
 
-        public abstract void AddItemToInventory(Item item);
+        public virtual void AddItemToInventory(Item item)
+        {
+            throw new Exception("Not implemented!");
+        }
 
-        public abstract void RemoveItemFromInventory(Item item);
+        public virtual void RemoveItemFromInventory(Item item)
+        {
+            throw new Exception("Not implemented!");
+        }
+
+        public static Hero CreateHeroByType(Heros.HeroType heroType)
+        {
+            Hero hero = null;
+
+            if (heroType == HeroType.Assassin)
+            {
+                hero = new Assassin();
+            }
+            else if (heroType == HeroType.Mage)
+            {
+                hero = new Mage();
+            }
+            else
+            {
+                hero = new Warrior();
+            }
+
+            return hero;
+        }
     }
 }

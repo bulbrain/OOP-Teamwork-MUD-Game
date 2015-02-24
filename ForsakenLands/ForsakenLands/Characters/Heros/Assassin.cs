@@ -6,6 +6,11 @@
 
     public class Assassin : Hero
     {
+        public Assassin()
+            : base(1, 100, 100, 100, 0, 0, 0, 0, new List<Item>()) // just for testing; to be changed later
+        {
+        }
+        
         public Assassin(
             int id,
             int attackPoints,
@@ -22,10 +27,12 @@
 
         public override void AddItemToInventory(Item item)
         {
+            this.ItemInventory.Add(item);
         }
 
         public override void RemoveItemFromInventory(Item item)
         {
+            this.ItemInventory.Remove(item);
         }
     }
 }

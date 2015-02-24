@@ -1,21 +1,6 @@
-C:\Users\Georgi\Desktop\Нова папка\trunk\ForsakenLands\ForsakenLands\bin\Debug\ForsakenLands.exe
-C:\Users\Georgi\Desktop\Нова папка\trunk\ForsakenLands\ForsakenLands\bin\Debug\ForsakenLands.pdb
-C:\Users\Georgi\Desktop\Нова папка\trunk\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.csprojResolveAssemblyReference.cache
-C:\Users\Georgi\Desktop\Нова папка\trunk\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.exe
-C:\Users\Georgi\Desktop\Нова папка\trunk\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.pdb
-C:\Users\Georgi\Desktop\Нова папка\trunk\ForsakenLands\ForsakenLands\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Georgi\Desktop\Нова папка\trunk\ForsakenLands\ForsakenLands\bin\Debug\Newtonsoft.Json.xml
-C:\Me\SoftUni Nakov\000 Lectures\My-SoftUni-Projects\TeamWork\05.OOP-ForsakenLands\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.exe
-C:\Me\SoftUni Nakov\000 Lectures\My-SoftUni-Projects\TeamWork\05.OOP-ForsakenLands\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.pdb
-C:\Me\SoftUni Nakov\000 Lectures\My-SoftUni-Projects\TeamWork\05.OOP-ForsakenLands\ForsakenLands\ForsakenLands\bin\Debug\ForsakenLands.exe
-C:\Me\SoftUni Nakov\000 Lectures\My-SoftUni-Projects\TeamWork\05.OOP-ForsakenLands\ForsakenLands\ForsakenLands\bin\Debug\ForsakenLands.pdb
-C:\Me\SoftUni Nakov\000 Lectures\My-SoftUni-Projects\TeamWork\05.OOP-ForsakenLands\ForsakenLands\ForsakenLands\bin\Debug\Newtonsoft.Json.dll
-C:\Me\SoftUni Nakov\000 Lectures\My-SoftUni-Projects\TeamWork\05.OOP-ForsakenLands\ForsakenLands\ForsakenLands\bin\Debug\Newtonsoft.Json.xml
-C:\Me\SoftUni Nakov\000 Lectures\My-SoftUni-Projects\TeamWork\05.OOP-ForsakenLands\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.csprojResolveAssemblyReference.cache
-D:\Dropbox\OOP\TeamProject\OOP-Teamwork-MUD-Game\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.exe
-D:\Dropbox\OOP\TeamProject\OOP-Teamwork-MUD-Game\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.pdb
 D:\Dropbox\OOP\TeamProject\OOP-Teamwork-MUD-Game\ForsakenLands\ForsakenLands\bin\Debug\ForsakenLands.exe
 D:\Dropbox\OOP\TeamProject\OOP-Teamwork-MUD-Game\ForsakenLands\ForsakenLands\bin\Debug\ForsakenLands.pdb
 D:\Dropbox\OOP\TeamProject\OOP-Teamwork-MUD-Game\ForsakenLands\ForsakenLands\bin\Debug\Newtonsoft.Json.dll
 D:\Dropbox\OOP\TeamProject\OOP-Teamwork-MUD-Game\ForsakenLands\ForsakenLands\bin\Debug\Newtonsoft.Json.xml
-D:\Dropbox\OOP\TeamProject\OOP-Teamwork-MUD-Game\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.csprojResolveAssemblyReference.cache
+D:\Dropbox\OOP\TeamProject\OOP-Teamwork-MUD-Game\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.exe
+D:\Dropbox\OOP\TeamProject\OOP-Teamwork-MUD-Game\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.pdb

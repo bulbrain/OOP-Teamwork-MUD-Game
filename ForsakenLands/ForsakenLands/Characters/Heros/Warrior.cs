@@ -6,6 +6,11 @@
 
     public class Warrior : Hero
     {
+        public Warrior()
+            : base(1, 100, 100, 100, 0, 0, 0, 0, null) // just for testing; to be changed later
+        {
+        }
+
         public Warrior(
             int id,
             int attackPoints,
@@ -22,12 +27,12 @@
 
         public override void AddItemToInventory(Item item)
         {
-
+            this.ItemInventory.Add(item);
         }
 
         public override void RemoveItemFromInventory(Item item)
         {
-
+            this.ItemInventory.Remove(item);
         }
     }
 }

@@ -1,21 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access">
   <Class Name="ForsakenLands.GameObject" Collapsed="true">
-    <Position X="6.25" Y="0.5" Width="1.5" />
+    <Position X="12.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameObject.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ForsakenLands.Characters.Character" Collapsed="true">
-    <Position X="4.25" Y="1.5" Width="1.5" />
+    <Position X="4.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAgAAIQAAACGgAAAggAQAIAAAAAAAAAAAAAQAAAJA=</HashCode>
       <FileName>Characters\Character.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ForsakenLands.Characters.Hero" Collapsed="true">
-    <Position X="2" Y="2.75" Width="1.5" />
+    <Position X="2" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAQQAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
       <FileName>Characters\Hero.cs</FileName>
@@ -23,7 +23,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ForsakenLands.Characters.Monster" Collapsed="true">
-    <Position X="7" Y="2.75" Width="1.5" />
+    <Position X="7" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAgAAAAAAQAAEAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
       <FileName>Characters\Monster.cs</FileName>
@@ -31,53 +31,172 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ForsakenLands.Characters.Heros.Assassin" Collapsed="true">
-    <Position X="0.5" Y="3.75" Width="1.5" />
+    <Position X="0.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
       <FileName>Characters\Heros\Assassin.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ForsakenLands.Characters.Heros.Mage" Collapsed="true">
-    <Position X="2" Y="3.75" Width="1.5" />
+    <Position X="2" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
       <FileName>Characters\Heros\Mage.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ForsakenLands.Characters.Heros.Warrior" Collapsed="true">
-    <Position X="3.5" Y="3.75" Width="1.5" />
+    <Position X="3.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
       <FileName>Characters\Heros\Warrior.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ForsakenLands.Characters.Monsters.Wolf" Collapsed="true">
-    <Position X="5.5" Y="3.75" Width="1.5" />
+    <Position X="5.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAAAAAAAAhAAAAAAAAgAAAAAEAAAAAgCAAAAAAAAA=</HashCode>
       <FileName>Characters\Monsters\Wolf.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ForsakenLands.Characters.Monsters.Vampire" Collapsed="true">
-    <Position X="7" Y="3.75" Width="1.5" />
+    <Position X="7" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAQBAAQAIAEAAAAAgAAAAAAAAAAQABAAAAAAAAAAA=</HashCode>
       <FileName>Characters\Monsters\Vampire.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ForsakenLands.Characters.Monsters.Dragon" Collapsed="true">
-    <Position X="8.5" Y="3.75" Width="1.5" />
+    <Position X="8.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAEAQAAAAAAAAAAACAAAAKAAAIAAAAAAIACAAA=</HashCode>
       <FileName>Characters\Monsters\Dragon.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ForsakenLands.Items.Item" Collapsed="true">
-    <Position X="11" Y="1.5" Width="1.5" />
+    <Position X="13.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Items\Item.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="ForsakenLands.GameEngine.Engine" Collapsed="true">
+    <Position X="22" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAQAAAAAAAAAAkAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameEngine\Engine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ForsakenLands.GameEngine.MD5Password" Collapsed="true">
+    <Position X="23.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEABAAAAAA=</HashCode>
+      <FileName>GameEngine\MD5Password.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ForsakenLands.GameEngine.Player" Collapsed="true">
+    <Position X="22" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAGAQgAEgAAAAA=</HashCode>
+      <FileName>GameEngine\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ForsakenLands.GameEngine.Room" Collapsed="true">
+    <Position X="16.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAgAgAAAAAAAAQAQAAhAAAAAAAAAAACAABAQ=</HashCode>
+      <FileName>GameEngine\Room.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ForsakenLands.Program" Collapsed="true">
+    <Position X="23.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ForsakenLands.Items.Armor.Boots" Collapsed="true">
+    <Position X="21.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Items\Armor\Boots.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ForsakenLands.Items.Armor.Chest" Collapsed="true">
+    <Position X="20.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Items\Armor\Chest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ForsakenLands.Items.Armor.Head" Collapsed="true">
+    <Position X="18.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Items\Armor\Head.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ForsakenLands.Items.Potion.HealPotion" Collapsed="true">
+    <Position X="10.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Items\Potion\HealPotion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ForsakenLands.Items.Potion.ManaPotion" Collapsed="true">
+    <Position X="12.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Items\Potion\ManaPotion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ForsakenLands.Items.Weapon.Dagger" Collapsed="true">
+    <Position X="14" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Items\Weapon\Dagger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ForsakenLands.Items.Weapon.Staff" Collapsed="true">
+    <Position X="17" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Items\Weapon\Staff.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ForsakenLands.Items.Weapon.Sword" Collapsed="true">
+    <Position X="15.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Items\Weapon\Sword.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="ForsakenLands.Interfaces.IInventoriable" Collapsed="true">
+    <Position X="22" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IInventoriable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ForsakenLands.Interfaces.IRegenerable" Collapsed="true">
+    <Position X="23.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAQAAEAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IRegenerable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="ForsakenLands.GameEngine.PlayerType" Collapsed="true">
+    <Position X="22" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>GameEngine\PlayerType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ForsakenLands.GameEngine.RoomType" Collapsed="true">
+    <Position X="23.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>GameEngine\RoomType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

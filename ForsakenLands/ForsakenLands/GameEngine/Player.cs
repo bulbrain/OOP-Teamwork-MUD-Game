@@ -1,19 +1,26 @@
 ﻿namespace ForsakenLands.GameEngine
 {
-    using Newtonsoft.Json;
     using System;
     using System.IO;
+
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
+    using ForsakenLands.Characters;
+    using ForsakenLands.Characters.Heros;
+    using System.Web;
 
     public class Player
     {
         private string name;
         private string password;
+        private Hero hero;
+        private const string DIRECTORY_PATH = @"..\Release\";
 
         public Player(string name, string password)
         {
             this.Name = name;
             this.Password = password;
-            this.CreatePlayerFile();
+            //this.CreatePlayerFile();
         }
 
         public string Name
@@ -27,7 +34,7 @@
             {
                 if (string.IsNullOrEmpty(value) || value.Length < 3)
                 {
-                    throw new ArgumentNullException();
+                    throw new ArgumentNullException("Invalid name");
                 }
 
                 this.name = value;
@@ -48,48 +55,81 @@
                     throw new ArgumentNullException("value", "Password should be non-empty and at least 6 symbols");
                 }
 
-                // MD5Password hashedPassword = new MD5Password(value); Don't know how to use it. The class should work fine.
-                this.password = value;
+                this.password = MD5Password.GetMd5Hash(value);
             }
         }
 
-        private void CreatePlayerFile()
+        private void SetHashedPassword(string hash)
         {
-            // get filecount to increase player numbers
-            int fileCount = Directory.GetFiles(@"..\Release\").Length;
-            string playerNumber = "player" + fileCount.ToString();
-            File.WriteAllText(@"..\Release\" + playerNumber + ".json", JsonConvert.SerializeObject(this));
+            this.password = hash;
         }
 
-        public static bool IsCorrectPlayer(string heroName, string heroPassword, PlayerType playerType)
+        public Hero Hero
         {
+            get
+            {
+                return this.hero;
+            }
+
+            set
+            {
+                this.hero = value;
+            }
+        }
+        
+        public static Player GetCorrectPlayer(string heroName, string heroPassword, PlayerType playerType)
+        {
+            Player player = null;
             if (playerType == PlayerType.New)
             {
-                return Player.IsNewPlayerCreated(heroName, heroPassword);
+                try
+                {
+                    player = new Player(heroName, heroPassword);
+                }
+                catch (ArgumentNullException)
+                {
+                    Console.WriteLine("The hero name must be at least 3 symbols and the password must be at least 6 symbols.");
+                }
+            }
+            else
+            {
+                try
+                {
+                    player = Player.GetOldPlayer(heroName, heroPassword);
+                }
+                catch (ArgumentNullException)
+                {
+                    Console.WriteLine("Player with these name and password is not found.");
+                }
             }
 
-            return Player.IsOldPlayerFound(heroName, heroPassword);
+            return player;
         }
 
-        private static bool IsNewPlayerCreated(string heroName, string heroPassword)
+        private static Player GetOldPlayer(string heroName, string heroPassword)
         {
-            try
+            string[] fileNames = Directory.GetFiles(DIRECTORY_PATH);
+            foreach (var fileName in fileNames)
             {
-                Player player = new Player(heroName, heroPassword);
-            }
-            catch (ArgumentNullException)
-            {
-                Console.WriteLine("The hero name must be at least 3 symbols and the password must be at least 6 symbols.");
-                return false;
+                string fileContent = File.ReadAllText(fileName);
+                dynamic data = JObject.Parse(fileContent);                
+                if (heroName.CompareTo((string)data.Name) == 0 && MD5Password.VerifyMd5Hash(heroPassword, (string)data.Password))
+                {
+                    Player player = JsonConvert.DeserializeObject<Player>(fileContent);
+                    player.SetHashedPassword((string)data.Password); // to avoid double hash of the password       
+                    return player;
+                }
             }
 
-            return true;
+            throw new ArgumentNullException("Not found");
         }
 
-        private static bool IsOldPlayerFound(string heroName, string heroPassword)
+        public void CreatePlayerFile()
         {
-            // To do - check in the file
-            return false;
+            // get filecount to increase player numbers
+            int fileCount = Directory.GetFiles(DIRECTORY_PATH).Length;
+            string playerNumber = "player" + fileCount.ToString();
+            File.WriteAllText(DIRECTORY_PATH + playerNumber + ".json", JsonConvert.SerializeObject(this));
         }
     }
 }
