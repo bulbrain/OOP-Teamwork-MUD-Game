@@ -20,7 +20,6 @@
         {
             this.Name = name;
             this.Password = password;
-            //this.CreatePlayerFile();
         }
 
         public string Name
