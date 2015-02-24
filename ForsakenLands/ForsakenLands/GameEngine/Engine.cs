@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace ForsakenLands.GameEngine
+﻿namespace ForsakenLands.GameEngine
 {
+    using System;
+
     public class Engine
     {
         private bool running = true;
@@ -36,7 +36,7 @@ namespace ForsakenLands.GameEngine
                 }
 
                 Console.ReadLine();
-                //To do next steps
+                // To do next steps
             }
         }
 
@@ -47,7 +47,8 @@ namespace ForsakenLands.GameEngine
             {
                 Console.WriteLine("Are you a new player? (Yes/No)");
                 answer = Console.ReadLine();
-            } while (answer.ToLower() != "no" && answer.ToLower() != "yes");
+            }
+            while (answer.ToLower() != "no" && answer.ToLower() != "yes");
 
             if (answer.ToLower() == "no")
             {
@@ -69,14 +70,16 @@ namespace ForsakenLands.GameEngine
         private bool WantsToContinue()
         {
             string answer;
-            do {
+            do
+            {
                 Console.WriteLine("Do you want to continue? (Yes/No)");
                 answer = Console.ReadLine();
                 if (answer.ToLower() == "yes")
                 {
                     return true;
                 }
-            } while (answer.ToLower() != "no");
+            }
+            while (answer.ToLower() != "no");
 
             return false;
         }

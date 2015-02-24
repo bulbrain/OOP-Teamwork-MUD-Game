@@ -1,8 +1,9 @@
 ﻿namespace ForsakenLands.GameEngine
 {
-    using Newtonsoft.Json;
     using System;
     using System.IO;
+
+    using Newtonsoft.Json;
 
     public class Player
     {
@@ -52,15 +53,7 @@
                 this.password = value;
             }
         }
-
-        private void CreatePlayerFile()
-        {
-            // get filecount to increase player numbers
-            int fileCount = Directory.GetFiles(@"..\Release\").Length;
-            string playerNumber = "player" + fileCount.ToString();
-            File.WriteAllText(@"..\Release\" + playerNumber + ".json", JsonConvert.SerializeObject(this));
-        }
-
+        
         public static bool IsCorrectPlayer(string heroName, string heroPassword, PlayerType playerType)
         {
             if (playerType == PlayerType.New)
@@ -90,6 +83,14 @@
         {
             // To do - check in the file
             return false;
+        }
+
+        private void CreatePlayerFile()
+        {
+            // get filecount to increase player numbers
+            int fileCount = Directory.GetFiles(@"..\Release\").Length;
+            string playerNumber = "player" + fileCount.ToString();
+            File.WriteAllText(@"..\Release\" + playerNumber + ".json", JsonConvert.SerializeObject(this));
         }
     }
 }

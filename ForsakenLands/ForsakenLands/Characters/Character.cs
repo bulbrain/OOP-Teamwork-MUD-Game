@@ -41,7 +41,7 @@
             {
                 if (value < 0)
                 {
-                    throw new ArgumentNullException("The atack points can't be negative!");
+                    throw new ArgumentNullException("value", "The atack points can't be negative!");
                 }
 
                 this.attackPoints = value;

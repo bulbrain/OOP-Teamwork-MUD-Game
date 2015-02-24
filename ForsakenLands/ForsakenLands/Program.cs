@@ -1,5 +1,6 @@
 ﻿namespace ForsakenLands
 {
+    using ForsakenLands.Characters;
     using ForsakenLands.GameEngine;
 
     public class Program
