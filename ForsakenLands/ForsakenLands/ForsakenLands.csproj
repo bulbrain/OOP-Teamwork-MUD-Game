@@ -62,6 +62,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\Attribute.cs" />
+    <Compile Include="Attributes\IAttribute.cs" />
+    <Compile Include="Attributes\IBaseSats.cs" />
+    <Compile Include="Attributes\IDynamicStats.cs" />
+    <Compile Include="Attributes\Stats.cs" />
     <Compile Include="Characters\Heros\Assassin.cs" />
     <Compile Include="Characters\Character.cs" />
     <Compile Include="Characters\Hero.cs" />
