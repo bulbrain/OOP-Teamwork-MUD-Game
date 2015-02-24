@@ -4,11 +4,13 @@
     using System.IO;
 
     using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
 
     public class Player
     {
         private string name;
         private string password;
+        private const string DIRECTORY_PATH = @"..\Release\";
 
         public Player(string name, string password)
         {
@@ -28,7 +30,7 @@
             {
                 if (string.IsNullOrEmpty(value) || value.Length < 3)
                 {
-                    throw new ArgumentNullException();
+                    throw new ArgumentNullException("Invalid name");
                 }
 
                 this.name = value;
@@ -49,8 +51,7 @@
                     throw new ArgumentNullException("value", "Password should be non-empty and at least 6 symbols");
                 }
 
-                // MD5Password hashedPassword = new MD5Password(value); Don't know how to use it. The class should work fine.
-                this.password = value;
+                this.password = MD5Password.GetMd5Hash(value);
             }
         }
         
@@ -81,16 +82,34 @@
 
         private static bool IsOldPlayerFound(string heroName, string heroPassword)
         {
-            // To do - check in the file
-            return false;
+            string[] fileNames = Directory.GetFiles(DIRECTORY_PATH);
+            bool isOldPlayerFound = false;
+
+            foreach (var fileName in fileNames)
+            {
+                string fileContent = File.ReadAllText(fileName);
+                dynamic data = JObject.Parse(fileContent);
+                if (heroName.CompareTo((string)data.Name) == 0 && MD5Password.VerifyMd5Hash(heroPassword, (string)data.Password))
+                {
+                    isOldPlayerFound = true;
+                    break;
+                }
+            }
+
+            if (!isOldPlayerFound)
+            {
+                Console.WriteLine("Invalid hero name and/or password!");
+            }
+
+            return isOldPlayerFound;
         }
 
         private void CreatePlayerFile()
         {
             // get filecount to increase player numbers
-            int fileCount = Directory.GetFiles(@"..\Release\").Length;
+            int fileCount = Directory.GetFiles(DIRECTORY_PATH).Length;
             string playerNumber = "player" + fileCount.ToString();
-            File.WriteAllText(@"..\Release\" + playerNumber + ".json", JsonConvert.SerializeObject(this));
+            File.WriteAllText(DIRECTORY_PATH + playerNumber + ".json", JsonConvert.SerializeObject(this));
         }
     }
 }
