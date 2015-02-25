@@ -1,6 +1,20 @@
+<<<<<<< .mine
+F:\SoftUni\2\Teamwork\oop\trunk\ForsakenLands\ForsakenLands\bin\Debug\ForsakenLands.exe
+F:\SoftUni\2\Teamwork\oop\trunk\ForsakenLands\ForsakenLands\bin\Debug\ForsakenLands.pdb
+F:\SoftUni\2\Teamwork\oop\trunk\ForsakenLands\ForsakenLands\bin\Debug\Newtonsoft.Json.dll
+F:\SoftUni\2\Teamwork\oop\trunk\ForsakenLands\ForsakenLands\bin\Debug\Newtonsoft.Json.xml
+F:\SoftUni\2\Teamwork\oop\trunk\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.csprojResolveAssemblyReference.cache
+F:\SoftUni\2\Teamwork\oop\trunk\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.exe
+F:\SoftUni\2\Teamwork\oop\trunk\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.pdb
+F:\SoftUni\2\Teamwork\oop\trunk\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.csproj.GenerateResource.Cache
+F:\SoftUni\2\Teamwork\oop\trunk\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.GUI.CharMenu.resources
+F:\SoftUni\2\Teamwork\oop\trunk\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.GUI.MainMenu.resources
+F:\SoftUni\2\Teamwork\oop\trunk\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.Properties.Resources.resources
+=======
 D:\Dropbox\OOP\TeamProject\OOP-Teamwork-MUD-Game\ForsakenLands\ForsakenLands\bin\Debug\ForsakenLands.exe
 D:\Dropbox\OOP\TeamProject\OOP-Teamwork-MUD-Game\ForsakenLands\ForsakenLands\bin\Debug\ForsakenLands.pdb
 D:\Dropbox\OOP\TeamProject\OOP-Teamwork-MUD-Game\ForsakenLands\ForsakenLands\bin\Debug\Newtonsoft.Json.dll
 D:\Dropbox\OOP\TeamProject\OOP-Teamwork-MUD-Game\ForsakenLands\ForsakenLands\bin\Debug\Newtonsoft.Json.xml
 D:\Dropbox\OOP\TeamProject\OOP-Teamwork-MUD-Game\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.exe
 D:\Dropbox\OOP\TeamProject\OOP-Teamwork-MUD-Game\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.pdb
+>>>>>>> .r41
