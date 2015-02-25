@@ -1,15 +1,10 @@
 ﻿namespace ForsakenLands.Items.Armor
 {
-    public class Boots : Item
+    public class Boots : Armor
     {
-        private int defencePoints;
-
-        public Boots(int id, string name, int defencePoints)
-            : base(id, name)
+        public Boots(int id, string name, bool isEquipped = false)
+            : base(id, name, isEquipped)
         {
-            this.DefencePoints = defencePoints;
         }
-
-        public int DefencePoints { get; set; }
     }
 }

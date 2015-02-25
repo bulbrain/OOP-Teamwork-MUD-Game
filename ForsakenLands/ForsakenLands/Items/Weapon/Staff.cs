@@ -1,15 +1,10 @@
 ﻿namespace ForsakenLands.Items.Weapon
 {
-    public class Staff : Item
+    public class Staff : Weapon
     {
-        private int attackPoints;
-
-        public Staff(int id, string name, int attackPoints)
-            : base(id, name)
+        public Staff(int id, string name, bool isEquipped)
+            : base(id, name, isEquipped)
         {
-            this.AttackPoints = attackPoints;
         }
-
-        public int AttackPoints { get; set; }
     }
 }

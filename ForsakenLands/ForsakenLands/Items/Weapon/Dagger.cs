@@ -1,15 +1,10 @@
 ﻿namespace ForsakenLands.Items.Weapon
 {
-    public class Dagger : Item
+    public class Dagger : Weapon
     {
-        private int attackPoints;
-
-        public Dagger(int id, string name, int attackPoints)
-            : base(id, name)
+        public Dagger(int id, string name, bool isEquipped)
+            : base(id, name, isEquipped)
         {
-            this.AttackPoints = attackPoints;
         }
-
-        public int AttackPoints { get; set; }
     }
 }

@@ -52,24 +52,24 @@
             throw new Exception("Not implemented!");
         }
 
-        public static Hero CreateHeroByType(Heros.HeroType heroType)
-        {
-            Hero hero = null;
+        //public static Hero CreateHeroByType(Heros.HeroType heroType)
+        //{
+        //    Hero hero = null;
 
-            if (heroType == HeroType.Assassin)
-            {
-                hero = new Assassin();
-            }
-            else if (heroType == HeroType.Mage)
-            {
-                hero = new Mage();
-            }
-            else
-            {
-                hero = new Warrior();
-            }
+        //    if (heroType == HeroType.Assassin)
+        //    {
+        //        hero = new Assassin();
+        //    }
+        //    else if (heroType == HeroType.Mage)
+        //    {
+        //        hero = new Mage();
+        //    }
+        //    else
+        //    {
+        //        hero = new Warrior();
+        //    }
 
-            return hero;
-        }
+        //    return hero;
+        //}
     }
 }

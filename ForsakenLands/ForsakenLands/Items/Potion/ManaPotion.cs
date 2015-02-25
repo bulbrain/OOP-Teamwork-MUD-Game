@@ -1,15 +1,12 @@
 ﻿namespace ForsakenLands.Items.Potion
 {
-    class ManaPotion : Item
+    class ManaPotion : Potion
     {
-        private int manaPoints;
-        
-        public ManaPotion(int id, string name, int manaPoints)
-            : base(id, name)
-        {
-            this.ManaPoints = manaPoints;
-        }
+        const int ManaRestored = 10;
 
-        public int ManaPoints { get; set; }
+        public ManaPotion(int id, string name, int healthPoints, int manaPoints)
+            : base(id, name, 0, ManaRestored)
+        {
+        }
     }
 }
