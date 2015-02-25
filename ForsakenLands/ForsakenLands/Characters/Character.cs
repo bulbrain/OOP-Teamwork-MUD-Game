@@ -3,6 +3,7 @@
     using System;
 
     using ForsakenLands;
+    using System.Text;
 
     public abstract class Character : GameObject
     {

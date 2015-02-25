@@ -2,6 +2,7 @@ namespace ForsakenLands.GameEngine
 {
     using ForsakenLands.Characters;
     using ForsakenLands.Characters.Heros;
+    using ForsakenLands.Characters.Monsters;
     using ForsakenLands.GUI;
     using System;
     using System.Windows.Forms;
@@ -59,6 +60,8 @@ namespace ForsakenLands.GameEngine
                     player.CreatePlayerFile();
                 }
 
+                Monster monster = new Wolf(1);
+                BattleManager.StartBattle(player.Hero, monster);
                 Console.ReadLine();
                 // To do next steps
             }

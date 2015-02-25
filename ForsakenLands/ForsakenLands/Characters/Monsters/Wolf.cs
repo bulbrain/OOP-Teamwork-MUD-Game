@@ -2,8 +2,8 @@
 {
     public class Wolf : Monster
     {
-        private const int WOLF_DEFAULT_ATTACK_POINTS = 200;
-        private const int WOLF_DEFAULT_DEFENCE_POINTS = 200;
+        private const int WOLF_DEFAULT_ATTACK_POINTS = 20;
+        private const int WOLF_DEFAULT_DEFENCE_POINTS = 10;
         private const int WOLF_DEFAULT_HEALTH_POINTS = 150;
         private const int WOLF_DEFAULT_MANA_POINTS = 100;
         private const int WOLF_DEFAULT_ACCURACY = 9;
