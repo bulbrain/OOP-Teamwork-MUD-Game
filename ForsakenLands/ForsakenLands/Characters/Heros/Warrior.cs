@@ -24,15 +24,5 @@
             : base(id, attackPoints, defencePoints, healthPoints, manaPoints, accuracy, evasion, range, itemInventory)
         {
         }
-
-        public override void AddItemToInventory(Item item)
-        {
-            this.ItemInventory.Add(item);
-        }
-
-        public override void RemoveItemFromInventory(Item item)
-        {
-            this.ItemInventory.Remove(item);
-        }
     }
 }
