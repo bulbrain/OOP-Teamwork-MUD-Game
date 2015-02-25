@@ -7,7 +7,7 @@
     public class Warrior : Hero
     {
         public Warrior()
-            : base(1, 100, 100, 100, 0, 0, 0, 0, null) // just for testing; to be changed later
+            : base(1, 50, 15, 100, 0, null, HeroType.Warrior)
         {
         }
 
@@ -17,11 +17,8 @@
             int defencePoints,
             int healthPoints,
             int manaPoints,
-            int accuracy,
-            int evasion,
-            int range,
             List<Item> itemInventory)
-            : base(id, attackPoints, defencePoints, healthPoints, manaPoints, accuracy, evasion, range, itemInventory)
+            : base(id, attackPoints, defencePoints, healthPoints, manaPoints, itemInventory, HeroType.Warrior)
         {
         }
     }

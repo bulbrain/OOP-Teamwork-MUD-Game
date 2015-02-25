@@ -7,7 +7,7 @@
     public class Assassin : Hero
     {
         public Assassin()
-            : base(1, 100, 100, 100, 0, 0, 0, 0, new List<Item>()) // just for testing; to be changed later
+            : base(1, 50, 10, 100, 0, null, HeroType.Assassin)
         {
         }
         
@@ -17,11 +17,8 @@
             int defencePoints,
             int manaPoints,
             int healthPoints,
-            int accuracy,
-            int evasion,
-            int range,
             List<Item> itemInventory)
-            : base(id, attackPoints, defencePoints, healthPoints, manaPoints, accuracy, evasion, range, itemInventory)
+            : base(id, attackPoints, defencePoints, healthPoints, manaPoints, itemInventory, HeroType.Assassin)
         {
         }
     }

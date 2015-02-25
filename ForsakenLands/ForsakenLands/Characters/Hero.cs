@@ -11,6 +11,7 @@
     public class Hero : Character, IInventoriable
     {
         private List<Item> itemInventory;
+        private HeroType heroType;
 
         public Hero(
             int id,
@@ -18,13 +19,21 @@
             int defencePoints,
             int healthPoints,
             int manaPoints,
-            int accuracy,
-            int evasion,
-            int range,
-            List<Item> itemInventory)
-            : base(id, attackPoints, defencePoints, healthPoints, manaPoints, accuracy, evasion, range)
+            List<Item> itemInventory,
+            HeroType heroType)
+            : base(id, attackPoints, defencePoints, healthPoints, manaPoints)
         {
             this.ItemInventory = itemInventory;
+            this.HeroType = heroType;
+        }
+
+        public HeroType HeroType 
+        { 
+            get {return this.heroType;}
+            set
+            {
+                this.heroType = value;
+            }
         }
 
         public List<Item> ItemInventory

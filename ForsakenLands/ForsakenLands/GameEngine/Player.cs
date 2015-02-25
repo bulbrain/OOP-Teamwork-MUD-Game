@@ -75,7 +75,7 @@
                 this.hero = value;
             }
         }
-        
+
         public static Player GetCorrectPlayer(string heroName, string heroPassword, PlayerType playerType)
         {
             Player player = null;

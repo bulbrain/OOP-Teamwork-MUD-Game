@@ -4,35 +4,27 @@
 
     using ForsakenLands;
     using System.Text;
+    using ForsakenLands.Attributes;
 
-    public abstract class Character : GameObject
+    public abstract class Character : GameObject, IBaseProperties
     {
         private int attackPoints;
         private int defencePoints;
         private int healthPoints;
         private int manaPoints;
-        private int accuracy;
-        private int evasion;
-        private int range;
 
         public Character(
             int id,
             int attackPoints,
             int defencePoints,
             int healthPoints,
-            int manaPoints,
-            int accuracy,
-            int evasion,
-            int range)
+            int manaPoints)
             : base(id)
         {
             this.AttackPoints = attackPoints;
             this.DefencePoints = defencePoints;
             this.HealthPoints = healthPoints;
             this.ManaPoints = manaPoints;
-            this.Accuaracy = accuracy;
-            this.Evasion = evasion;
-            this.Range = range;
         }
 
         public int AttackPoints 
@@ -88,48 +80,6 @@
                 }
 
                 this.manaPoints = value;
-            }
-        }
-
-        public int Accuaracy 
-        {
-            get { return this.accuracy; }
-            set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentNullException("value", "The accuracy can't be negative!");
-                }
-
-                this.accuracy = value;
-            }
-        }
-
-        public int Evasion
-        {
-            get { return this.evasion; }
-            set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentNullException("value", "The evasion can't be negative!");
-                }
-
-                this.evasion = value;
-            }
-        }
-
-        public int Range
-        {
-            get { return this.range; }
-            set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentNullException("value", "The range can't be negative!");
-                }
-
-                this.range = value;
             }
         }
     }
