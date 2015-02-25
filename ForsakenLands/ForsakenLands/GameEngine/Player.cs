@@ -107,6 +107,11 @@
 
         private static Player GetOldPlayer(string heroName, string heroPassword)
         {
+            if (!Directory.Exists(DIRECTORY_PATH))
+            {
+                Directory.CreateDirectory(DIRECTORY_PATH);
+            }
+
             string[] fileNames = Directory.GetFiles(DIRECTORY_PATH);
             foreach (var fileName in fileNames)
             {
@@ -126,6 +131,11 @@
         public void CreatePlayerFile()
         {
             // get filecount to increase player numbers
+            if (!Directory.Exists(DIRECTORY_PATH))
+            {
+                Directory.CreateDirectory(DIRECTORY_PATH);
+            }
+
             int fileCount = Directory.GetFiles(DIRECTORY_PATH).Length;
             string playerNumber = "player" + fileCount.ToString();
             File.WriteAllText(DIRECTORY_PATH + playerNumber + ".json", JsonConvert.SerializeObject(this));

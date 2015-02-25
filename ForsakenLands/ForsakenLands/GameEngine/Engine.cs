@@ -51,13 +51,13 @@ namespace ForsakenLands.GameEngine
                 }
 
                 // choose hero and add it to the player
-                //if (playerType == PlayerType.New)
-                //{
-                //    HeroType heroType = this.ChooseHeroType();
-                //    Hero hero = Hero.CreateHeroByType(heroType);
-                //    player.Hero = hero;
-                //    player.CreatePlayerFile();
-                //}
+                if (playerType == PlayerType.New)
+                {
+                    HeroType heroType = this.ChooseHeroType();
+                    Hero hero = Hero.CreateHeroByType(heroType);
+                    player.Hero = hero;
+                    player.CreatePlayerFile();
+                }
 
                 Console.ReadLine();
                 // To do next steps
@@ -143,24 +143,24 @@ namespace ForsakenLands.GameEngine
             return false;
         }
 
-        //private HeroType ChooseHeroType()
-        //{
-        //    string answer;
-        //    do
-        //    {
-        //        Console.WriteLine("Please choose hero type:");
-        //        Console.WriteLine("(1 for Assasin, 2 for Mage, 3 for Warrior)");
-        //        answer = Console.ReadLine();
-        //    }
-        //    while (answer.ToLower() != "1" && answer.ToLower() != "2" && answer.ToLower() != "3");
+        private HeroType ChooseHeroType()
+        {
+            string answer;
+            do
+            {
+                Console.WriteLine("Please choose hero type:");
+                Console.WriteLine("(1 for Assasin, 2 for Mage, 3 for Warrior)");
+                answer = Console.ReadLine();
+            }
+            while (answer.ToLower() != "1" && answer.ToLower() != "2" && answer.ToLower() != "3");
 
-        //    switch (answer)
-        //    {
-        //        case "1": return HeroType.Assassin;
-        //        case "2": return HeroType.Mage;
-        //        default:
-        //            return HeroType.Warrior;
-        //    }
-        //}
+            switch (answer)
+            {
+                case "1": return HeroType.Assassin;
+                case "2": return HeroType.Mage;
+                default:
+                    return HeroType.Warrior;
+            }
+        }
     }
 }

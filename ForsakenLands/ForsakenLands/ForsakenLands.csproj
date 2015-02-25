@@ -72,6 +72,7 @@
     <Compile Include="Characters\Heros\Assassin.cs" />
     <Compile Include="Characters\Character.cs" />
     <Compile Include="Characters\Hero.cs" />
+    <Compile Include="Characters\Heros\HeroType.cs" />
     <Compile Include="Characters\Heros\Mage.cs" />
     <Compile Include="Characters\Heros\Warrior.cs" />
     <Compile Include="Characters\Monster.cs" />
