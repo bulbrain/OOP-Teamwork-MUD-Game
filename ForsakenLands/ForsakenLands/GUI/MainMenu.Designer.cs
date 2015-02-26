@@ -156,6 +156,7 @@
             this.Controls.Add(this.playButton);
             this.Controls.Add(this.Tittle_label);
             this.Name = "MainMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main_Menu";
             this.ResumeLayout(false);
             this.PerformLayout();

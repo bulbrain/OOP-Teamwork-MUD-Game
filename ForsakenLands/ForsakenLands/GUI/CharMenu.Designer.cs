@@ -125,6 +125,7 @@
             this.Controls.Add(this.charNameLbl);
             this.Controls.Add(this.button1);
             this.Name = "CharMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Character Menu";
             this.classBox.ResumeLayout(false);
             this.classBox.PerformLayout();

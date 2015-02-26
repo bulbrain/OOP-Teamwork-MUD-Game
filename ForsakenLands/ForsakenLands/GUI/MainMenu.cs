@@ -19,6 +19,7 @@ namespace ForsakenLands.GUI
         private void login_button_Click(object sender, EventArgs e)
         {
             CharMenu charMenu = new CharMenu();
+            this.Hide();
             charMenu.Show();
         }
 

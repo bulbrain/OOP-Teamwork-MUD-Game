@@ -61,7 +61,7 @@ namespace ForsakenLands.GameEngine
                 }
 
                 Monster monster = new Wolf();
-                BattleManager.StartBattle(player.Hero, monster);
+                //BattleManager.StartBattle(player.Hero, monster);
                 
                 if (!WantsToContinue())
                 {

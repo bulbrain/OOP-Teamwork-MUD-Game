@@ -18,8 +18,9 @@ namespace ForsakenLands.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string output = "";
-            output += charName.Text;
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
         }
     }
 }
