@@ -4,12 +4,16 @@
     using ForsakenLands.Interfaces;
     using System;
 
-    public abstract class Item : GameObject, IBaseProperties
+    public abstract class Item : GameObject, IBaseProperties, ILevelable
     {
+        private const int INNITIAL_LEVEL = 1;
+        protected const double STAT_AND_EXP_MODIFIER_FROM_LEVEL = 0.2;
+
         private int attackPoints;
         private int defencePoints;
         private int healthPoints;
         private int manaPoints;
+        private int level;
 
         public Item(string name, int attackPoints, int defencePoints, int healthPoints, int manaPoints)
             : base()
@@ -19,6 +23,7 @@
             this.DefencePoints = defencePoints;
             this.HealthPoints = healthPoints;
             this.ManaPoints = manaPoints;
+            this.Level = INNITIAL_LEVEL;
         }
 
         public string Name { get; set; }
@@ -33,7 +38,7 @@
                     throw new ArgumentNullException("value", "The atack points can't be negative!");
                 }
 
-                this.attackPoints = value;
+                this.attackPoints = CalculateStatAccordingToLevel(value);
             }
         }
 
@@ -47,7 +52,7 @@
                     throw new ArgumentNullException("value", "The defense points can't be negative!");
                 }
 
-                this.defencePoints = value;
+                this.defencePoints = CalculateStatAccordingToLevel(value);
             }
         }
 
@@ -61,7 +66,7 @@
                     throw new ArgumentNullException("value", "The health points can't be negative!");
                 }
 
-                this.healthPoints = value;
+                this.healthPoints = CalculateStatAccordingToLevel(value);
             }
         }
 
@@ -75,8 +80,33 @@
                     throw new ArgumentNullException("value", "The mana points can't be negative!");
                 }
 
-                this.manaPoints = value;
+                this.manaPoints = CalculateStatAccordingToLevel(value);
             }
+        }
+
+        public int Level
+        {
+            get
+            {
+                return this.level;
+            }
+
+            protected set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentException("value", "Hero level cannot be a negative number.");
+                }
+
+                this.level = value;
+            }
+        }
+
+        public int CalculateStatAccordingToLevel(int stat)
+        {
+            int statScaledWithLevel = stat + Convert.ToInt32(stat * STAT_AND_EXP_MODIFIER_FROM_LEVEL) * this.Level;
+
+            return statScaledWithLevel;
         }
     }
 }

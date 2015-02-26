@@ -2,12 +2,12 @@
 {
     public interface IBaseProperties
     {
-        int AttackPoints { get; set; }
+        int AttackPoints { get; }
 
-        int DefencePoints { get; set; }
+        int DefencePoints { get; }
 
-        int HealthPoints { get; set; }
+        int HealthPoints { get; }
 
-        int ManaPoints { get; set; }
+        int ManaPoints { get; }
     }
 }

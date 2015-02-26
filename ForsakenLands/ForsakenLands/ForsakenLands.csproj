@@ -105,8 +105,12 @@
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IConsumable.cs" />
+    <Compile Include="Interfaces\IDynamicProperties.cs" />
     <Compile Include="Interfaces\IEquippable.cs" />
+    <Compile Include="Interfaces\IExperiencable.cs" />
+    <Compile Include="Interfaces\IExperienceAwardable.cs" />
     <Compile Include="Interfaces\IInventoriable.cs" />
+    <Compile Include="Interfaces\ILevelable.cs" />
     <Compile Include="Items\Armor\Armor.cs" />
     <Compile Include="Items\Armor\Boots.cs" />
     <Compile Include="Items\Armor\Chest.cs" />

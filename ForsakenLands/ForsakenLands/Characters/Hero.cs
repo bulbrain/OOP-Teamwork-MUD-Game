@@ -8,10 +8,15 @@
     using System.Linq;
     using ForsakenLands.Interfaces;
 
-    public class Hero : Character, IInventoriable
+    public class Hero : Character, IInventoriable, IExperiancable
     {
+        private const int INNITIAL_EXPERIENCE = 0;
+        private const int ExperienceToLevelTwo = 100;
+
         private List<Item> itemInventory;
         private HeroType heroType;
+        private int currentExperience;
+        private int experienceToNextLevel;
 
         public Hero(
             int attackPoints,
@@ -24,15 +29,8 @@
         {
             this.ItemInventory = itemInventory;
             this.HeroType = heroType;
-        }
-
-        public HeroType HeroType 
-        { 
-            get {return this.heroType;}
-            set
-            {
-                this.heroType = value;
-            }
+            this.CurrentExperience = INNITIAL_EXPERIENCE;
+            this.ExperienceToNextLevel = ExperienceToLevelTwo;
         }
 
         public List<Item> ItemInventory
@@ -48,6 +46,51 @@
                 {
                     this.itemInventory = value;
                 }
+            }
+        }
+
+        public HeroType HeroType
+        {
+            get { return this.heroType; }
+            set
+            {
+                this.heroType = value;
+            }
+        }
+
+        public int CurrentExperience
+        {
+            get
+            {
+                return this.currentExperience;
+            }
+
+            private set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentException("Current experience cannot be a negative number.");
+                }
+
+                this.currentExperience = value;
+            }
+        }
+
+        public int ExperienceToNextLevel
+        {
+            get
+            {
+                return this.experienceToNextLevel;
+            }
+
+            private set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentException("Experience to next level cannot be a negative number.");
+                }
+
+                this.experienceToNextLevel = value;
             }
         }
 
@@ -138,6 +181,30 @@
             this.DefencePoints -= item.DefencePoints;
             this.ManaPoints -= item.ManaPoints;
             this.HealthPoints -= item.HealthPoints;
+        }
+
+        /// <summary>
+        /// This method can be used when a monster is killed, or quest completed, which awards experience
+        /// </summary>
+        /// <param name="experienceToAd">The amount of experience to be added to 
+        /// the CurrentExperience of the hero</param>
+        public void AddExperience(int experienceToAd)
+        {
+            if (experienceToAd < 0)
+            {
+                throw new ArgumentException("The experience to be added to the hero must be a positive integer.");
+            }
+
+            if (this.CurrentExperience + experienceToAd >= this.ExperienceToNextLevel)
+            {
+                this.Level++;
+                this.CurrentExperience = 0;
+                this.ExperienceToNextLevel += Convert.ToInt32(this.ExperienceToNextLevel * STAT_AND_EXP_MODIFIER_FROM_LEVEL);
+            }
+            else
+            {
+                this.CurrentExperience += experienceToAd;
+            }
         }
     }
 }
