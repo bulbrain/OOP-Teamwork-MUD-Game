@@ -196,3 +196,7 @@ FakesAssemblies/
 *.opt
 *.user
 *.suo
+/ForsakenLands/ForsakenLands/bin
+/ForsakenLands/ForsakenLands/obj
+/ForsakenLands/ForsakenLands/*.user
+/ForsakenLands/ForsakenLands/*.suo
