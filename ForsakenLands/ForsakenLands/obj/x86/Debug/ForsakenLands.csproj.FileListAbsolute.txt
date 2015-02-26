@@ -10,3 +10,15 @@ F:\SoftUni\2\Teamwork\oop\trunk\ForsakenLands\ForsakenLands\bin\Debug\Newtonsoft
 F:\SoftUni\2\Teamwork\oop\trunk\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.exe
 F:\SoftUni\2\Teamwork\oop\trunk\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.pdb
 F:\SoftUni\2\Teamwork\oop\trunk\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.GUI.Form1.resources
+F:\_Programming\_Code\SoftUni\OOP\Teamwork\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.exe
+F:\_Programming\_Code\SoftUni\OOP\Teamwork\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.pdb
+F:\_Programming\_Code\SoftUni\OOP\Teamwork\ForsakenLands\ForsakenLands\bin\Debug\ForsakenLands.exe
+F:\_Programming\_Code\SoftUni\OOP\Teamwork\ForsakenLands\ForsakenLands\bin\Debug\ForsakenLands.pdb
+F:\_Programming\_Code\SoftUni\OOP\Teamwork\ForsakenLands\ForsakenLands\bin\Debug\Newtonsoft.Json.dll
+F:\_Programming\_Code\SoftUni\OOP\Teamwork\ForsakenLands\ForsakenLands\bin\Debug\Newtonsoft.Json.xml
+F:\_Programming\_Code\SoftUni\OOP\Teamwork\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.csprojResolveAssemblyReference.cache
+F:\_Programming\_Code\SoftUni\OOP\Teamwork\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.GUI.CharMenu.resources
+F:\_Programming\_Code\SoftUni\OOP\Teamwork\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.GUI.Form1.resources
+F:\_Programming\_Code\SoftUni\OOP\Teamwork\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.GUI.MainMenu.resources
+F:\_Programming\_Code\SoftUni\OOP\Teamwork\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.Properties.Resources.resources
+F:\_Programming\_Code\SoftUni\OOP\Teamwork\ForsakenLands\ForsakenLands\obj\x86\Debug\ForsakenLands.csproj.GenerateResource.Cache
