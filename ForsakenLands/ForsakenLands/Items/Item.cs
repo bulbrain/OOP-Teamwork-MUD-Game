@@ -38,7 +38,7 @@
                     throw new ArgumentNullException("value", "The atack points can't be negative!");
                 }
 
-                this.attackPoints = CalculateStatAccordingToLevel(value); ;
+                this.attackPoints = CalculateStatAccordingToLevel(value);
             }
         }
 
@@ -52,7 +52,7 @@
                     throw new ArgumentNullException("value", "The defense points can't be negative!");
                 }
 
-                this.defencePoints = CalculateStatAccordingToLevel(value); ;
+                this.defencePoints = CalculateStatAccordingToLevel(value);
             }
         }
 
@@ -66,7 +66,7 @@
                     throw new ArgumentNullException("value", "The health points can't be negative!");
                 }
 
-                this.healthPoints = CalculateStatAccordingToLevel(value); ;
+                this.healthPoints = CalculateStatAccordingToLevel(value);
             }
         }
 
@@ -80,7 +80,7 @@
                     throw new ArgumentNullException("value", "The mana points can't be negative!");
                 }
 
-                this.manaPoints = CalculateStatAccordingToLevel(value); ;
+                this.manaPoints = CalculateStatAccordingToLevel(value);
             }
         }
 
