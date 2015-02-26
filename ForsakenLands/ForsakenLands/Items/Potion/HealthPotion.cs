@@ -4,7 +4,7 @@
     {
         const int HealthRestored = 10;
 
-        public HealthPotion(string name, int healthPoints, int manaPoints)
+        public HealthPotion(string name)
             : base(name, HealthRestored, 0)
         {
         }

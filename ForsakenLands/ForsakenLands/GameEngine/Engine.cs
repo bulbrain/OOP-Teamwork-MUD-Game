@@ -4,6 +4,7 @@ namespace ForsakenLands.GameEngine
     using ForsakenLands.Characters.Heros;
     using ForsakenLands.Characters.Monsters;
     using ForsakenLands.GUI;
+    using ForsakenLands.Items;
     using System;
     using System.Windows.Forms;
 
@@ -46,31 +47,23 @@ namespace ForsakenLands.GameEngine
                     }
                 }
 
-                if (!wantsToContinue)
-                {
-                    CloseGame(player);
-                }
-
-                // choose hero and add it to the player
                 if (playerType == PlayerType.New)
                 {
-                    HeroType heroType = this.ChooseHeroType();
-                    Hero hero = Hero.CreateHeroByType(heroType);
-                    player.Hero = hero;
+                    CreatePlayerHero(player);
                     player.CreatePlayerFile();
                 }
 
-                Monster monster = new Wolf();
-                //BattleManager.StartBattle(player.Hero, monster);
-                
-                if (!WantsToContinue())
-                {
-                    CloseGame(player);
-                }
-
-                Console.ReadLine();
-                // To do next steps
+                PlayGame(player);
+                                
+                CloseGame(player);
             }
+        }
+
+        private void CreatePlayerHero(Player player)
+        {
+            HeroType heroType = ChooseHeroType();
+            Hero hero = Hero.CreateHeroByType(heroType);
+            player.Hero = hero;
         }
 
         private PlayerType GetPlayerType()
@@ -172,6 +165,19 @@ namespace ForsakenLands.GameEngine
             }
         }
 
+        private void PlayGame(Player player)
+        {
+            bool wantsToContinue = true;
+
+            while (wantsToContinue && player.Hero.HealthPoints > 0)
+            {
+                Monster monster = GameObjectGenerator.GenerateMonster();
+                Item item = GameObjectGenerator.GenerateItem();
+                BattleManager.StartBattle(player.Hero, monster);
+                wantsToContinue = WantsToContinue();
+            }
+        }
+        
         private void CloseGame(Player player)
         {
             if (player != null)
@@ -183,6 +189,7 @@ namespace ForsakenLands.GameEngine
             }
 
             Console.WriteLine("Good bye!");
+            Console.ReadLine();
         }
 
         private bool WantsToSave()

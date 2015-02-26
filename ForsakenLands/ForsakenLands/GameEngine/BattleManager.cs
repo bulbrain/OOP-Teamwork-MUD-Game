@@ -36,7 +36,7 @@ namespace ForsakenLands.GameEngine
             }
             else
             {
-                Console.WriteLine("The {0} kill you!", hero.GetType().Name);
+                Console.WriteLine("The {0} kill you!", monster.GetType().Name);
             }
         }
 
