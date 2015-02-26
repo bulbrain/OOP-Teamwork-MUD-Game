@@ -4,7 +4,7 @@
 
     using ForsakenLands;
     using System.Text;
-    using ForsakenLands.Attributes;
+    using ForsakenLands.Interfaces;
 
     public abstract class Character : GameObject, IBaseProperties
     {

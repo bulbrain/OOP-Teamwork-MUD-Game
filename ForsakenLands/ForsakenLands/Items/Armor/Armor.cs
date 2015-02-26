@@ -7,7 +7,7 @@
     {
         // attributes should be added
         public Armor(string name, bool isEquipped = false)
-            : base(name)
+            : base(name, 10, 0, 0, 0)
         {
             this.IsEquipped = isEquipped;
         }

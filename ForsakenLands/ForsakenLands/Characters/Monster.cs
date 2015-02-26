@@ -1,6 +1,5 @@
 ﻿namespace ForsakenLands.Characters
 {
-    using ForsakenLands.Attributes;
     using ForsakenLands.Interfaces;
 
     public class Monster : Character

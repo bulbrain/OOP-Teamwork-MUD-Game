@@ -1,4 +1,4 @@
-﻿namespace ForsakenLands.Attributes
+﻿namespace ForsakenLands.Interfaces
 {
     public interface IBaseProperties
     {

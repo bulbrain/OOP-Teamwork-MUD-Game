@@ -2,11 +2,11 @@
 {
     using System.Collections.Generic;
 
-    using ForsakenLands.Interfaces;
     using ForsakenLands.Items;
     using ForsakenLands.Characters.Heros;
     using System;
     using System.Linq;
+    using ForsakenLands.Interfaces;
 
     public class Hero : Character, IInventoriable
     {
@@ -122,6 +122,22 @@
             }
 
             return hero;
+        }
+
+        private void AddPointsToHeroPoints(Item item)
+        {
+            this.AttackPoints += item.AttackPoints;
+            this.DefencePoints += item.DefencePoints;
+            this.ManaPoints += item.ManaPoints;
+            this.HealthPoints += item.HealthPoints;
+        }
+
+        private void RemovePointsFromHeroPoints(Item item)
+        {
+            this.AttackPoints -= item.AttackPoints;
+            this.DefencePoints -= item.DefencePoints;
+            this.ManaPoints -= item.ManaPoints;
+            this.HealthPoints -= item.HealthPoints;
         }
     }
 }
