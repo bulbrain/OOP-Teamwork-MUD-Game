@@ -8,8 +8,8 @@
         private int healthPoints;
         private int manaPoints;
 
-        public Potion(int id, string name, int healthPoints, int manaPoints)
-            : base(id, name)
+        public Potion(string name, int healthPoints, int manaPoints)
+            : base(name)
         {
             this.HealthPoints = healthPoints;
             this.ManaPoints = manaPoints;

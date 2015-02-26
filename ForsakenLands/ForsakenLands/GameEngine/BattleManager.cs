@@ -88,7 +88,7 @@ namespace ForsakenLands.GameEngine
             string answer;
             do
             {
-                Console.WriteLine("How do you want to attack? (1 - Strike, 2 - Spell");
+                Console.WriteLine("How do you want to attack? (1 - Strike, 2 - Spell)");
                 answer = Console.ReadLine();
             }
             while (answer != "1" && answer != "2");

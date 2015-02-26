@@ -48,7 +48,7 @@ namespace ForsakenLands.GameEngine
 
                 if (!wantsToContinue)
                 {
-                    Console.WriteLine("GoodBye");
+                    CloseGame(player);
                 }
 
                 // choose hero and add it to the player
@@ -60,8 +60,14 @@ namespace ForsakenLands.GameEngine
                     player.CreatePlayerFile();
                 }
 
-                Monster monster = new Wolf(1);
+                Monster monster = new Wolf();
                 BattleManager.StartBattle(player.Hero, monster);
+                
+                if (!WantsToContinue())
+                {
+                    CloseGame(player);
+                }
+
                 Console.ReadLine();
                 // To do next steps
             }
@@ -164,6 +170,36 @@ namespace ForsakenLands.GameEngine
                 default:
                     return HeroType.Warrior;
             }
+        }
+
+        private void CloseGame(Player player)
+        {
+            if (player != null)
+            {
+                if (WantsToSave())
+                {
+                    Player.SavePlayer(player);
+                }                
+            }
+
+            Console.WriteLine("Good bye!");
+        }
+
+        private bool WantsToSave()
+        {
+            string answer;
+            do
+            {
+                Console.WriteLine("Do you want to save your state? (Yes/No)");
+                answer = Console.ReadLine();
+                if (answer.ToLower() == "yes")
+                {
+                    return true;
+                }
+            }
+            while (answer.ToLower() != "no");
+
+            return false;
         }
     }
 }

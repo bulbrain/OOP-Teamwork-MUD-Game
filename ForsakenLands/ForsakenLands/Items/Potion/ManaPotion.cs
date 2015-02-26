@@ -4,8 +4,8 @@
     {
         const int ManaRestored = 10;
 
-        public ManaPotion(int id, string name, int healthPoints, int manaPoints)
-            : base(id, name, 0, ManaRestored)
+        public ManaPotion(string name, int healthPoints, int manaPoints)
+            : base(name, 0, ManaRestored)
         {
         }
     }

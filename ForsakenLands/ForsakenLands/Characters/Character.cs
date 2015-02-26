@@ -14,12 +14,11 @@
         private int manaPoints;
 
         public Character(
-            int id,
             int attackPoints,
             int defencePoints,
             int healthPoints,
             int manaPoints)
-            : base(id)
+            : base()
         {
             this.AttackPoints = attackPoints;
             this.DefencePoints = defencePoints;

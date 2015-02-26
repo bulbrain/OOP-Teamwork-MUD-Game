@@ -10,8 +10,8 @@
          private const byte ROOM_MAX_ITEMS = 4;
          private const byte ROOM_MAX_ENEMIES = 4;
 
-         public Room(int id, string name, RoomType roomType, uint southExit, uint northExit, uint westExit, uint eastExit)
-             : base(id)
+         public Room(string name, RoomType roomType, uint southExit, uint northExit, uint westExit, uint eastExit)
+             : base()
          {
              this.Name = name;
              this.RoomType = roomType;

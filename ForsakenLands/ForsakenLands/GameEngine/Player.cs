@@ -9,14 +9,14 @@
     using ForsakenLands.Characters.Heros;
     using System.Web;
 
-    public class Player
+    public class Player : GameObject
     {
         private string name;
         private string password;
         private Hero hero;
         private const string DIRECTORY_PATH = @"..\Release\";
 
-        public Player(string name, string password)
+        public Player(string name, string password) : base()
         {
             this.Name = name;
             this.Password = password;
@@ -107,21 +107,20 @@
 
         private static Player GetOldPlayer(string heroName, string heroPassword)
         {
-            if (!Directory.Exists(DIRECTORY_PATH))
+            if (Directory.Exists(DIRECTORY_PATH))
             {
-                Directory.CreateDirectory(DIRECTORY_PATH);
-            }
-
-            string[] fileNames = Directory.GetFiles(DIRECTORY_PATH);
-            foreach (var fileName in fileNames)
-            {
-                string fileContent = File.ReadAllText(fileName);
-                dynamic data = JObject.Parse(fileContent);                
-                if (heroName.CompareTo((string)data.Name) == 0 && MD5Password.VerifyMd5Hash(heroPassword, (string)data.Password))
+                string[] fileNames = Directory.GetFiles(DIRECTORY_PATH);
+                foreach (var fileName in fileNames)
                 {
-                    Player player = JsonConvert.DeserializeObject<Player>(fileContent);
-                    player.SetHashedPassword((string)data.Password); // to avoid double hash of the password       
-                    return player;
+                    string fileContent = File.ReadAllText(fileName);
+                    dynamic data = JObject.Parse(fileContent);
+                    if (heroName.CompareTo((string)data.Name) == 0 && MD5Password.VerifyMd5Hash(heroPassword, (string)data.Password))
+                    {
+                        Player player = JsonConvert.DeserializeObject<Player>(fileContent);
+                        player.SetHashedPassword((string)data.Password); // to avoid double hash of the password
+                        player.Id = data.Id;
+                        return player;
+                    }
                 }
             }
 
@@ -137,8 +136,21 @@
             }
 
             int fileCount = Directory.GetFiles(DIRECTORY_PATH).Length;
-            string playerNumber = "player" + fileCount.ToString();
-            File.WriteAllText(DIRECTORY_PATH + playerNumber + ".json", JsonConvert.SerializeObject(this));
+            File.WriteAllText(DIRECTORY_PATH + "player_" + this.Id + ".json", JsonConvert.SerializeObject(this));
+        }
+
+        public static void SavePlayer(Player player)
+        {
+            if (File.Exists(DIRECTORY_PATH + "player_" + player.Id + ".json"))
+            {
+                File.WriteAllText(DIRECTORY_PATH + "player_" + player.Id + ".json", JsonConvert.SerializeObject(player));
+            }
+            else
+            {
+                player.CreatePlayerFile();
+            }
+
+            Console.WriteLine("The information for your hero is saved.");
         }
     }
 }

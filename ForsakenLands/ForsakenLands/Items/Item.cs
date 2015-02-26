@@ -4,8 +4,8 @@
 
     public abstract class Item : GameObject
     {
-        public Item(int id, string name)
-            : base(id)
+        public Item(string name)
+            : base()
         {
             this.Name = name;
         }

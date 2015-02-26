@@ -2,8 +2,8 @@
 {
     public class Sword : Weapon
     {
-        public Sword(int id, string name, bool isEquipped)
-            : base(id, name, isEquipped)
+        public Sword(string name, bool isEquipped)
+            : base(name, isEquipped)
         {
         }
     }

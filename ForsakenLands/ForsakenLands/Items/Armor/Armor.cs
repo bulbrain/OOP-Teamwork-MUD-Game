@@ -6,8 +6,8 @@
     public abstract class Armor : Item, IEquippable
     {
         // attributes should be added
-        public Armor(int id, string name, bool isEquipped = false)
-            : base(id, name)
+        public Armor(string name, bool isEquipped = false)
+            : base(name)
         {
             this.IsEquipped = isEquipped;
         }

@@ -6,12 +6,11 @@
     public class Monster : Character
     {
         public Monster(
-            int id,
             int attackPoints,
             int defencePoints,
             int healthPoints,
             int manaPoints)
-            : base(id, attackPoints, defencePoints, healthPoints, manaPoints)
+            : base(attackPoints, defencePoints, healthPoints, manaPoints)
         {
         }
     }

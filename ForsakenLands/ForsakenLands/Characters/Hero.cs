@@ -14,14 +14,13 @@
         private HeroType heroType;
 
         public Hero(
-            int id,
             int attackPoints,
             int defencePoints,
             int healthPoints,
             int manaPoints,
             List<Item> itemInventory,
             HeroType heroType)
-            : base(id, attackPoints, defencePoints, healthPoints, manaPoints)
+            : base(attackPoints, defencePoints, healthPoints, manaPoints)
         {
             this.ItemInventory = itemInventory;
             this.HeroType = heroType;
