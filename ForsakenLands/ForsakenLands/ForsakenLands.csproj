@@ -66,6 +66,8 @@
   <ItemGroup>
     <Compile Include="Attributes\Attribute.cs" />
     <Compile Include="Attributes\IAttribute.cs" />
+    <Compile Include="Characters\Monsters\MonsterType.cs" />
+    <Compile Include="GameEngine\GameObjectGenerator.cs" />
     <Compile Include="GUI\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +118,7 @@
     <Compile Include="Items\Armor\Chest.cs" />
     <Compile Include="Items\Armor\Helmet.cs" />
     <Compile Include="Items\Item.cs" />
+    <Compile Include="Items\ItemType.cs" />
     <Compile Include="Items\Potion\HealthPotion.cs" />
     <Compile Include="Items\Potion\ManaPotion.cs" />
     <Compile Include="Items\Potion\Potion.cs" />
