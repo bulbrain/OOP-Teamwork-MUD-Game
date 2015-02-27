@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ForsakenLands.Characters
+﻿namespace ForsakenLands.Characters
 {
+    using System;
+
     internal class HealthChangedEventArgs : EventArgs
     {
         public HealthChangedEventArgs(int healthPoints)

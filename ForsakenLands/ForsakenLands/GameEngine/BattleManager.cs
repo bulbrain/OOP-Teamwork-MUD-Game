@@ -1,17 +1,14 @@
-﻿using ForsakenLands.Characters;
-using ForsakenLands.Interfaces;
-using ForsakenLands.Items;
-using ForsakenLands.Items.Potion;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace ForsakenLands.GameEngine
+﻿namespace ForsakenLands.GameEngine
 {
+    using System;
+
+    using ForsakenLands.Characters;
+    using ForsakenLands.Items;
+
     public class BattleManager
     {
-        public static void StartBattle(Hero hero, Monster monster, Item item) {
+        public static void StartBattle(Hero hero, Monster monster, Item item)
+        {
             int round = 1;
 
             while (hero.CurrentHealthPoints > 0 && monster.CurrentHealthPoints > 0)
@@ -40,7 +37,7 @@ namespace ForsakenLands.GameEngine
                 Console.WriteLine("You win the {0}!", item);
                 Console.WriteLine("-------------------------------------------");
                 hero.AddItemToInventory(item);
-                hero.UseItem(hero.ItemInventory.Count-1);
+                hero.UseItem(hero.ItemInventory.Count - 1);
             }
             else
             {
@@ -48,7 +45,7 @@ namespace ForsakenLands.GameEngine
             }
         }
 
-        private static void Beat(Character attacker, Character defender , AttackType attackType)
+        private static void Beat(Character attacker, Character defender, AttackType attackType)
         {
             if (attackType.Equals(AttackType.Strike))
             {
@@ -59,7 +56,7 @@ namespace ForsakenLands.GameEngine
                 Spell(attacker, defender);
             }
         }
-        
+
         private static void Strike(Character straker, Character defender)
         {
             if (defender.DefencePoints < straker.AttackPoints)
@@ -72,10 +69,9 @@ namespace ForsakenLands.GameEngine
                 {
                     defender.CurrentHealthPoints = 0;
                 }
-                
             }
         }
-        
+
         private static void Spell(Character wizard, Character defender)
         {
             if (defender.DefencePoints < wizard.ManaPoints)
@@ -88,11 +84,11 @@ namespace ForsakenLands.GameEngine
                 {
                     defender.CurrentHealthPoints = 0;
                 }
-                
             }
         }
- 
-        private static AttackType ChooseHowToAttack() {
+
+        private static AttackType ChooseHowToAttack()
+        {
             string answer;
             do
             {
@@ -106,12 +102,12 @@ namespace ForsakenLands.GameEngine
                 return AttackType.Strike;
             }
 
-            return AttackType.Spell;           
+            return AttackType.Spell;
         }
 
         private static void PrintProperties(Hero hero, Monster monster)
         {
-            Console.WriteLine("Hero Type: {0} Monster Type: {1}",hero.HeroType, monster.GetType().Name);
+            Console.WriteLine("Hero Type: {0} Monster Type: {1}", hero.HeroType, monster.GetType().Name);
             Console.WriteLine("Mana Points: {0} Mana Points: {1}", hero.ManaPoints, monster.ManaPoints);
             Console.WriteLine("Attack Points: {0} Attack Points: {1}", hero.AttackPoints, monster.AttackPoints);
             Console.WriteLine("Defence Points: {0} Defence Points: {1}", hero.DefencePoints, monster.DefencePoints);

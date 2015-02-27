@@ -6,17 +6,17 @@
 
     public class Mage : Hero
     {
-        private const int MAGE_DEFAULT_ATTACK_POINTS = 10;
-        private const int MAGE_DEFAULT_DEFENCE_POINTS = 10;
-        private const int MAGE_DEFAULT_HEALTH_POINTS = 100;
-        private const int MAGE_DEFAULT_MANA_POINTS = 60;
+        private const int MageDefaultAttackPoints = 10;
+        private const int MageDefaultDefencePoints = 10;
+        private const int MageDefaultHealthPoints = 100;
+        private const int MageDefaultManaPoints = 60;
 
         public Mage()
             : base(
-                    MAGE_DEFAULT_ATTACK_POINTS,
-                    MAGE_DEFAULT_DEFENCE_POINTS,
-                    MAGE_DEFAULT_HEALTH_POINTS,
-                    MAGE_DEFAULT_MANA_POINTS,
+                    MageDefaultAttackPoints,
+                    MageDefaultDefencePoints,
+                    MageDefaultHealthPoints,
+                    MageDefaultManaPoints,
                     null,
                     HeroType.Mage)
         {

@@ -1,7 +1,7 @@
 ﻿namespace ForsakenLands.Items.Potion
 {
-    using ForsakenLands.Interfaces;
     using System;
+    using ForsakenLands.Interfaces;
 
     public abstract class Potion : Item, IConsumable
     {

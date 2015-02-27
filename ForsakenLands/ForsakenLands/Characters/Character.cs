@@ -1,18 +1,17 @@
 ﻿namespace ForsakenLands.Characters
 {
     using System;
-    using System.Threading.Tasks;
 
     using ForsakenLands;
-    using System.Text;
     using ForsakenLands.Interfaces;
 
     internal delegate void ChangedEventHandler(object sender, HealthChangedEventArgs e);
 
     public abstract class Character : GameObject, IBaseAttributable, ILevelable
     {
-        private const int INNITIAL_LEVEL = 1;
-        protected const double STAT_AND_EXP_MODIFIER_FROM_LEVEL = 0.2;
+        protected const double StatAndExperienceModifierFromLevel = 0.2;
+
+        private const int InitialLevel = 1;
 
         private int attackPoints;
         private int defencePoints;
@@ -22,8 +21,6 @@
         private int currentHealthPoints;
         private int currentManaPoints;
 
-        internal event ChangedEventHandler HealthChanged;
-
         public Character(
             int attackPoints,
             int defencePoints,
@@ -31,14 +28,16 @@
             int manaPoints)
             : base()
         {
-            this.Level = INNITIAL_LEVEL;
-            this.AttackPoints = CalculateStatAccordingToLevel(attackPoints);
-            this.DefencePoints = CalculateStatAccordingToLevel(defencePoints);
-            this.HealthPoints = CalculateStatAccordingToLevel(healthPoints);
-            this.ManaPoints = CalculateStatAccordingToLevel(manaPoints);
+            this.Level = InitialLevel;
+            this.AttackPoints = this.CalculateStatAccordingToLevel(attackPoints);
+            this.DefencePoints = this.CalculateStatAccordingToLevel(defencePoints);
+            this.HealthPoints = this.CalculateStatAccordingToLevel(healthPoints);
+            this.ManaPoints = this.CalculateStatAccordingToLevel(manaPoints);
             this.CurrentHealthPoints = this.HealthPoints;
             this.CurrentManaPoints = this.ManaPoints;
         }
+
+        internal event ChangedEventHandler HealthChanged;
 
         public int AttackPoints
         {
@@ -128,7 +127,7 @@
             set
             {
                 this.currentHealthPoints = value;
-                
+
                 if (value < 30)
                 {
                     this.OnChanged(new HealthChangedEventArgs(value));
@@ -148,28 +147,25 @@
                 this.currentManaPoints = value;
             }
         }
-
-
+        
         public int CalculateStatAccordingToLevel(int stat)
         {
             if (this.Level == 1)
             {
                 return stat;
             }
-            else
-            {
-                int statScaledWithLevel = stat + Convert.ToInt32(stat * STAT_AND_EXP_MODIFIER_FROM_LEVEL) * (this.Level - 1);
-                return statScaledWithLevel;
-            }
+
+            int statScaledWithLevel = stat + Convert.ToInt32(stat * StatAndExperienceModifierFromLevel) * (this.Level - 1);
+
+            return statScaledWithLevel;
         }
 
         internal virtual void OnChanged(HealthChangedEventArgs e)
         {
             if (this.HealthChanged != null)
             {
-                HealthChanged(this, e);
-           }
+                this.HealthChanged(this, e);
+            }
         }
-
     }
 }

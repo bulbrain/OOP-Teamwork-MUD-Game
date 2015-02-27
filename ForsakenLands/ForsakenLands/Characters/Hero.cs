@@ -1,16 +1,16 @@
 ﻿namespace ForsakenLands.Characters
 {
-    using System.Collections.Generic;
-
-    using ForsakenLands.Items;
-    using ForsakenLands.Characters.Heros;
     using System;
+    using System.Collections.Generic;
     using System.Linq;
+
+    using ForsakenLands.Characters.Heros;
     using ForsakenLands.Interfaces;
+    using ForsakenLands.Items;
 
     public class Hero : Character, IInventoriable, IExperiancable
     {
-        private const int INNITIAL_EXPERIENCE = 0;
+        private const int InnitialExperience = 0;
         private const int ExperienceToLevelTwo = 100;
 
         private List<Item> itemInventory;
@@ -29,7 +29,7 @@
         {
             this.ItemInventory = itemInventory;
             this.HeroType = heroType;
-            this.CurrentExperience = INNITIAL_EXPERIENCE;
+            this.CurrentExperience = InnitialExperience;
             this.ExperienceToNextLevel = ExperienceToLevelTwo;
         }
 
@@ -94,6 +94,26 @@
             }
         }
 
+        public static Hero CreateHeroByType(HeroType heroType)
+        {
+            Hero hero = null;
+
+            if (heroType == HeroType.Assassin)
+            {
+                hero = new Assassin();
+            }
+            else if (heroType == HeroType.Mage)
+            {
+                hero = new Mage();
+            }
+            else
+            {
+                hero = new Warrior();
+            }
+
+            return hero;
+        }
+
         public void AddItemToInventory(Item item)
         {
             this.ItemInventory.Add(item);
@@ -145,82 +165,24 @@
                 {
                     itemToEquipType = itemToEquip.GetType().Name.ToString();
                 }
-                
-                var sameTypeItems = 
+
+                var sameTypeItems =
                     this.itemInventory
                     .Where(item => item.GetType().ToString().Contains(itemToEquipType));
-                   
+
                 foreach (IEquippable equippable in sameTypeItems)
                 {
                     if (equippable.IsEquipped == true)
                     {
-                        //remove points from previous equipped
-                        this.UequipItem((Item)equippable);
+                        // remove points from previous equipped
+                        this.UnequipItem((Item)equippable);
                     }
+
                     equippable.IsEquipped = false;
                 }
 
                 this.EquipItem((Item)itemToEquip);
                 itemToEquip.IsEquipped = true;
-            }
-        }
-
-        public static Hero CreateHeroByType(Heros.HeroType heroType)
-        {
-            Hero hero = null;
-
-            if (heroType == HeroType.Assassin)
-            {
-                hero = new Assassin();
-            }
-            else if (heroType == HeroType.Mage)
-            {
-                hero = new Mage();
-            }
-            else
-            {
-                hero = new Warrior();
-            }
-
-            return hero;
-        }
-
-        private void EquipItem(Item item)
-        {
-            this.AttackPoints += item.AttackPoints;
-            this.DefencePoints += item.DefencePoints;
-            this.ManaPoints += item.ManaPoints;
-            this.HealthPoints += item.HealthPoints;
-        }
-
-        private void UequipItem(Item item)
-        {
-            this.AttackPoints -= item.AttackPoints;
-            this.DefencePoints -= item.DefencePoints;
-            this.ManaPoints -= item.ManaPoints;
-            this.HealthPoints -= item.HealthPoints;
-        }
-
-        private void ConsumeItem(IConsumable consumable)
-        {
-            // restore health
-            if (this.CurrentHealthPoints + consumable.HealthToRestore > this.HealthPoints)
-            {
-                this.CurrentHealthPoints = this.HealthPoints; 
-            }
-            else
-            {
-                this.CurrentHealthPoints += consumable.HealthToRestore;
-            }
-
-            //restore mana
-            if (this.CurrentManaPoints + consumable.ManaToRestore > this.ManaPoints)
-            {
-                this.CurrentManaPoints = this.ManaPoints;
-            }
-            else
-            {
-                this.CurrentManaPoints += consumable.ManaToRestore;
             }
         }
 
@@ -240,11 +202,50 @@
             {
                 this.Level++;
                 this.CurrentExperience = 0;
-                this.ExperienceToNextLevel += Convert.ToInt32(this.ExperienceToNextLevel * STAT_AND_EXP_MODIFIER_FROM_LEVEL);
+                this.ExperienceToNextLevel += Convert.ToInt32(this.ExperienceToNextLevel * StatAndExperienceModifierFromLevel);
             }
             else
             {
                 this.CurrentExperience += experienceToAd;
+            }
+        }
+
+        private void EquipItem(Item item)
+        {
+            this.AttackPoints += item.AttackPoints;
+            this.DefencePoints += item.DefencePoints;
+            this.ManaPoints += item.ManaPoints;
+            this.HealthPoints += item.HealthPoints;
+        }
+
+        private void UnequipItem(Item item)
+        {
+            this.AttackPoints -= item.AttackPoints;
+            this.DefencePoints -= item.DefencePoints;
+            this.ManaPoints -= item.ManaPoints;
+            this.HealthPoints -= item.HealthPoints;
+        }
+
+        private void ConsumeItem(IConsumable consumable)
+        {
+            // restore health
+            if (this.CurrentHealthPoints + consumable.HealthToRestore > this.HealthPoints)
+            {
+                this.CurrentHealthPoints = this.HealthPoints;
+            }
+            else
+            {
+                this.CurrentHealthPoints += consumable.HealthToRestore;
+            }
+
+            //restore mana
+            if (this.CurrentManaPoints + consumable.ManaToRestore > this.ManaPoints)
+            {
+                this.CurrentManaPoints = this.ManaPoints;
+            }
+            else
+            {
+                this.CurrentManaPoints += consumable.ManaToRestore;
             }
         }
     }

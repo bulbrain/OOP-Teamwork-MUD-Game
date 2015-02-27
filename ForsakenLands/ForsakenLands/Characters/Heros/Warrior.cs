@@ -6,17 +6,17 @@
 
     public class Warrior : Hero
     {
-        private const int WARRIOR_DEFAULT_ATTACK_POINTS = 40;
-        private const int WARRIOR_DEFAULT_DEFENCE_POINTS = 20;
-        private const int WARRIOR_DEFAULT_HEALTH_POINTS = 100;
-        private const int WARRIOR_DEFAULT_MANA_POINTS = 0;
+        private const int WarriorDefaultAttackPoints = 40;
+        private const int WarriorDefaultDefencePoints = 20;
+        private const int WarriorDefaultHealthPoints = 100;
+        private const int WarriorDefaultManaPoints = 0;
 
         public Warrior()
             : base(
-                    WARRIOR_DEFAULT_ATTACK_POINTS,
-                    WARRIOR_DEFAULT_DEFENCE_POINTS,
-                    WARRIOR_DEFAULT_HEALTH_POINTS,
-                    WARRIOR_DEFAULT_MANA_POINTS,
+                    WarriorDefaultAttackPoints,
+                    WarriorDefaultDefencePoints,
+                    WarriorDefaultHealthPoints,
+                    WarriorDefaultManaPoints,
                     null,
                     HeroType.Warrior)
         {

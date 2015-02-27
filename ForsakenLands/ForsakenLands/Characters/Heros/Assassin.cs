@@ -6,17 +6,17 @@
 
     public class Assassin : Hero
     {
-        private const int ASSASSIN_DEFAULT_ATTACK_POINTS = 40;
-        private const int ASSASSIN_DEFAULT_DEFENCE_POINTS = 10;
-        private const int ASSASSIN_DEFAULT_HEALTH_POINTS = 100;
-        private const int ASSASSIN_DEFAULT_MANA_POINTS = 0;
+        private const int AssassinDefaultAttackPoints = 40;
+        private const int AssassinDefaultDefencePoints = 10;
+        private const int AssassinDefaultHealthPoints = 100;
+        private const int AssassinDefaultManaPoints = 0;
 
         public Assassin()
             : base(
-                    ASSASSIN_DEFAULT_ATTACK_POINTS,
-                    ASSASSIN_DEFAULT_DEFENCE_POINTS,
-                    ASSASSIN_DEFAULT_HEALTH_POINTS,
-                    ASSASSIN_DEFAULT_MANA_POINTS,
+                    AssassinDefaultAttackPoints,
+                    AssassinDefaultDefencePoints,
+                    AssassinDefaultHealthPoints,
+                    AssassinDefaultManaPoints,
                     null,
                     HeroType.Assassin)
         {

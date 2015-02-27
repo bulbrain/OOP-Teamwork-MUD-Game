@@ -1,7 +1,6 @@
 ﻿namespace ForsakenLands.Items.Armor
 {
     using ForsakenLands.Interfaces;
-    using System;
 
     public abstract class Armor : Item, IEquippable
     {

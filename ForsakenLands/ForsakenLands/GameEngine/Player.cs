@@ -2,22 +2,22 @@
 {
     using System;
     using System.IO;
-    
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Linq;
+
     using ForsakenLands.Characters;
     using ForsakenLands.CustomException;
-    using ForsakenLands.Characters.Heros;
-    using System.Web;
+
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
 
     public class Player : GameObject
     {
+        private const string DirectoryPath = @"..\Release\";
         private string name;
         private string password;
         private Hero hero;
-        private const string DIRECTORY_PATH = @"..\Release\";
 
-        public Player(string name, string password) : base()
+        public Player(string name, string password)
+            : base()
         {
             this.Name = name;
             this.Password = password;
@@ -59,10 +59,6 @@
             }
         }
 
-        private void SetHashedPassword(string hash)
-        {
-            this.password = hash;
-        }
 
         public Hero Hero
         {
@@ -77,6 +73,23 @@
             }
         }
 
+        public void CreatePlayerFile()
+        {
+            // get filecount to increase player numbers
+            if (!Directory.Exists(DirectoryPath))
+            {
+                Directory.CreateDirectory(DirectoryPath);
+            }
+
+            int fileCount = Directory.GetFiles(DirectoryPath).Length;
+            File.WriteAllText(DirectoryPath + "player_" + this.Id + ".json", JsonConvert.SerializeObject(this));
+        }
+
+        private void SetHashedPassword(string hash)
+        {
+            this.password = hash;
+        }
+
         public static Player GetCorrectPlayer(string heroName, string heroPassword, PlayerType playerType)
         {
             Player player = null;
@@ -88,7 +101,7 @@
                     {
                         throw new InvalidUserInputException("User name is already use. Please try another one.");
                     }
-                    
+
                     player = new Player(heroName, heroPassword);
                 }
                 catch (InvalidUserInputException e)
@@ -111,11 +124,25 @@
             return player;
         }
 
+        public static void SavePlayer(Player player)
+        {
+            if (File.Exists(DirectoryPath + "player_" + player.Id + ".json"))
+            {
+                File.WriteAllText(DirectoryPath + "player_" + player.Id + ".json", JsonConvert.SerializeObject(player));
+            }
+            else
+            {
+                player.CreatePlayerFile();
+            }
+
+            Console.WriteLine("The information for your hero is saved.");
+        }
+
         private static Player GetOldPlayer(string heroName, string heroPassword)
         {
-            if (Directory.Exists(DIRECTORY_PATH))
+            if (Directory.Exists(DirectoryPath))
             {
-                string[] fileNames = Directory.GetFiles(DIRECTORY_PATH);
+                string[] fileNames = Directory.GetFiles(DirectoryPath);
                 foreach (var fileName in fileNames)
                 {
                     string fileContent = File.ReadAllText(fileName);
@@ -135,9 +162,9 @@
 
         private static bool CheckForUsedUserName(string heroName)
         {
-            if (Directory.Exists(DIRECTORY_PATH))
+            if (Directory.Exists(DirectoryPath))
             {
-                string[] fileNames = Directory.GetFiles(DIRECTORY_PATH);
+                string[] fileNames = Directory.GetFiles(DirectoryPath);
                 foreach (var fileName in fileNames)
                 {
                     string fileContent = File.ReadAllText(fileName);
@@ -150,32 +177,6 @@
             }
 
             return false;
-        }
-
-        public void CreatePlayerFile()
-        {
-            // get filecount to increase player numbers
-            if (!Directory.Exists(DIRECTORY_PATH))
-            {
-                Directory.CreateDirectory(DIRECTORY_PATH);
-            }
-
-            int fileCount = Directory.GetFiles(DIRECTORY_PATH).Length;
-            File.WriteAllText(DIRECTORY_PATH + "player_" + this.Id + ".json", JsonConvert.SerializeObject(this));
-        }
-
-        public static void SavePlayer(Player player)
-        {
-            if (File.Exists(DIRECTORY_PATH + "player_" + player.Id + ".json"))
-            {
-                File.WriteAllText(DIRECTORY_PATH + "player_" + player.Id + ".json", JsonConvert.SerializeObject(player));
-            }
-            else
-            {
-                player.CreatePlayerFile();
-            }
-
-            Console.WriteLine("The information for your hero is saved.");
         }
     }
 }

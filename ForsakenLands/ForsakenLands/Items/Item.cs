@@ -1,9 +1,9 @@
 ﻿namespace ForsakenLands.Items
 {
-    using ForsakenLands;
-    using ForsakenLands.Interfaces;
     using System;
     using System.Text;
+    using ForsakenLands;
+    using ForsakenLands.Interfaces;
 
     public class Item : GameObject, IBaseAttributable
     {

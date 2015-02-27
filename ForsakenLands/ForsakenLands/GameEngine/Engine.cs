@@ -1,13 +1,10 @@
 namespace ForsakenLands.GameEngine
 {
-    using ForsakenLands.Characters;
-    using ForsakenLands.Characters.Heros;
-    using ForsakenLands.Characters.Monsters;
-    using ForsakenLands.GUI;
-    using ForsakenLands.Items;
     using System;
     using System.Windows.Forms;
-    using System.Threading.Tasks;
+
+    using ForsakenLands.Characters;
+    using ForsakenLands.Characters.Heros;
 
     public class Engine
     {
@@ -17,7 +14,7 @@ namespace ForsakenLands.GameEngine
         {
             if (this.running)
             {
-                ForsakenLands.GUI.MainMenu mainMenu = new ForsakenLands.GUI.MainMenu();
+                GUI.MainMenu mainMenu = new GUI.MainMenu();
                 Application.Run(mainMenu);
                 Console.WriteLine("YOU ARE ENTERED THE BATTLEFIELD OF FORSAKEN LANDS");
                 PlayerType playerType = this.GetPlayerType();
@@ -50,53 +47,14 @@ namespace ForsakenLands.GameEngine
 
                 if (playerType == PlayerType.New)
                 {
-                    CreatePlayerHero(player);
+                    this.CreatePlayerHero(player);
                     player.CreatePlayerFile();
                 }
 
-                PlayGame(player);
+                this.PlayGame(player);
 
-                CloseGame(player);
+                this.CloseGame(player);
             }
-        }
-
-        private void CreatePlayerHero(Player player)
-        {
-            HeroType heroType = ChooseHeroType();
-            Hero hero = Hero.CreateHeroByType(heroType);
-            hero.HealthChanged += (sender, eventArgs) =>
-            {
-                Console.WriteLine("Be carafull you have only {0} health points!!!!!!!!!!!!!!!!",
-                    eventArgs.NewHealthPoints);
-            };
-            player.Hero = hero;
-        }
-
-        private PlayerType GetPlayerType()
-        {
-            string answer;
-            do
-            {
-                Console.WriteLine("Are you a new player? (Yes/No)");
-                answer = Console.ReadLine();
-            }
-            while (answer.ToLower() != "no" && answer.ToLower() != "yes");
-
-            if (answer.ToLower() == "no")
-            {
-                return PlayerType.Old;
-            }
-
-            return PlayerType.New;
-        }
-
-        private string[] EnterUserNameAndPassword()
-        {
-            Console.WriteLine("Enter your heroic name (min 3 symbols):");
-            string heroName = Console.ReadLine();
-            Console.WriteLine("Enter your epic password (min 6 symbols):");
-            string heroPassword = Engine.ReadPassword();
-            return new string[] { heroName, heroPassword };
         }
 
         private static string ReadPassword()
@@ -134,6 +92,46 @@ namespace ForsakenLands.GameEngine
             return password;
         }
 
+        private void CreatePlayerHero(Player player)
+        {
+            HeroType heroType = this.ChooseHeroType();
+            Hero hero = Hero.CreateHeroByType(heroType);
+            hero.HealthChanged += (sender, eventArgs) =>
+                {
+                    Console.WriteLine(
+                        "Be carafull you have only {0} health points!!!!!!!!!!!!!!!!",
+                        eventArgs.NewHealthPoints);
+                };
+            player.Hero = hero;
+        }
+
+        private PlayerType GetPlayerType()
+        {
+            string answer;
+            do
+            {
+                Console.WriteLine("Are you a new player? (Yes/No)");
+                answer = Console.ReadLine();
+            }
+            while (answer.ToLower() != "no" && answer.ToLower() != "yes");
+
+            if (answer.ToLower() == "no")
+            {
+                return PlayerType.Old;
+            }
+
+            return PlayerType.New;
+        }
+
+        private string[] EnterUserNameAndPassword()
+        {
+            Console.WriteLine("Enter your heroic name (min 3 symbols):");
+            string heroName = Console.ReadLine();
+            Console.WriteLine("Enter your epic password (min 6 symbols):");
+            string heroPassword = Engine.ReadPassword();
+            return new string[] { heroName, heroPassword };
+        }
+
         private bool WantsToContinue()
         {
             string answer;
@@ -164,8 +162,10 @@ namespace ForsakenLands.GameEngine
 
             switch (answer)
             {
-                case "1": return HeroType.Assassin;
-                case "2": return HeroType.Mage;
+                case "1":
+                    return HeroType.Assassin;
+                case "2":
+                    return HeroType.Mage;
                 default:
                     return HeroType.Warrior;
             }
@@ -186,10 +186,10 @@ namespace ForsakenLands.GameEngine
                 Console.WriteLine("You will attack {0} in this room!", currentRoom.Monster.GetType().Name);
                 Console.WriteLine("If you kill him, you will get {0}", currentRoom.Item);
                 BattleManager.StartBattle(player.Hero, currentRoom.Monster, currentRoom.Item);
-                
+
                 if (player.Hero.CurrentHealthPoints > 0)
                 {
-                    wantsToContinue = this.WantsToContinue();                   
+                    wantsToContinue = this.WantsToContinue();
                 }
             }
         }

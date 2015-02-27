@@ -1,7 +1,6 @@
 ﻿namespace ForsakenLands.Items.Weapon
 {
     using ForsakenLands.Interfaces;
-    using System;
 
     public abstract class Weapon : Item, IEquippable
     {

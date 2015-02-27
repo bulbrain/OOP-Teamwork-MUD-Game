@@ -1,9 +1,10 @@
-﻿using System.Text;
-namespace ForsakenLands.Items.Potion
+﻿namespace ForsakenLands.Items.Potion
 {
-    class ManaPotion : Potion
+    using System.Text;
+
+    public class ManaPotion : Potion
     {
-        const int ManaRestored = 30;
+        private const int ManaRestored = 30;
 
         public ManaPotion(string name = null)
             : base(0, ManaRestored, name)

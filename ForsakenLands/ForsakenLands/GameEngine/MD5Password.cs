@@ -33,7 +33,7 @@
         public static bool VerifyMd5Hash(string input, string hash)
         {
             // Hash the input.
-            string hashOfInput = MD5Password.GetMd5Hash(input);
+            string hashOfInput = GetMd5Hash(input);
 
             // Create a StringComparer an compare the hashes.
             StringComparer comparer = StringComparer.OrdinalIgnoreCase;
@@ -42,10 +42,8 @@
             {
                 return true;
             }
-            else
-            {
-                return false;
-            }
+
+            return false;
         }
     }
 }
