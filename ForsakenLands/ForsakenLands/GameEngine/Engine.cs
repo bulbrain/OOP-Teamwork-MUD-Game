@@ -54,7 +54,7 @@ namespace ForsakenLands.GameEngine
                 }
 
                 PlayGame(player);
-                                
+
                 CloseGame(player);
             }
         }
@@ -173,11 +173,11 @@ namespace ForsakenLands.GameEngine
             {
                 Monster monster = GameObjectGenerator.GenerateMonster();
                 Item item = GameObjectGenerator.GenerateItem();
-                BattleManager.StartBattle(player.Hero, monster);
+                BattleManager.StartBattle(player.Hero, monster, item);
                 wantsToContinue = WantsToContinue();
             }
         }
-        
+
         private void CloseGame(Player player)
         {
             if (player != null)
@@ -185,7 +185,7 @@ namespace ForsakenLands.GameEngine
                 if (WantsToSave())
                 {
                     Player.SavePlayer(player);
-                }                
+                }
             }
 
             Console.WriteLine("Good bye!");

@@ -5,7 +5,7 @@
 
     public abstract class Potion : Item, IConsumable
     {
-        public Potion(string name, int healthPoints, int manaPoints)
+        public Potion(int healthPoints, int manaPoints, string name = null)
             : base(name, 0, 0, healthPoints, manaPoints)
         {
         }

@@ -2,8 +2,8 @@
 {
     public class Staff : Weapon
     {
-        public Staff(string name, bool isEquipped)
-            : base(name, isEquipped)
+        public Staff(string name = null)
+            : base(name)
         {
         }
     }

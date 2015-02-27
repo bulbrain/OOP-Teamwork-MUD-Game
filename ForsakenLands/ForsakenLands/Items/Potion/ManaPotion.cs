@@ -4,8 +4,8 @@
     {
         const int ManaRestored = 10;
 
-        public ManaPotion(string name)
-            : base(name, 0, ManaRestored)
+        public ManaPotion(string name = null)
+            : base(0, ManaRestored, name)
         {
         }
     }

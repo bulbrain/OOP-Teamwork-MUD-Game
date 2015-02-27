@@ -6,10 +6,10 @@
     public abstract class Armor : Item, IEquippable
     {
         // attributes should be added
-        public Armor(string name, bool isEquipped = false)
-            : base(name, 10, 0, 0, 0)
+        public Armor(string name = null)
+            : base(name, 0, 10, 0, 0)
         {
-            this.IsEquipped = isEquipped;
+            this.IsEquipped = false;
         }
 
         public bool IsEquipped { get; set; }

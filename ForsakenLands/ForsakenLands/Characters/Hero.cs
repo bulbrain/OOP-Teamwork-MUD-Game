@@ -125,10 +125,12 @@
                 throw new ArgumentOutOfRangeException("Invalid Item Inventory Index.");
             }
 
+            // add item stats to hero stats
+            Item currentItem = this.ItemInventory[itemIndex];
+            this.AddPointsToHeroPoints(currentItem);
+
             if (this.ItemInventory[itemIndex] is IConsumable)
             {
-                // add item stats to hero stats
-
                 // remove item from inventory after it has been consumed
                 this.ItemInventory.RemoveAt(itemIndex);
             }
@@ -138,8 +140,18 @@
                 var itemToEquipType = itemToEquip.GetType();
 
                 // Unequip items of the same type
-                foreach (IEquippable equippable in this.ItemInventory.Where(i => i.GetType() == itemToEquipType))
+                var sameTimeItems =
+                    from item in this.ItemInventory
+                    where item.GetType().Name == itemToEquip.GetType().Name
+                    select item;
+
+                foreach (IEquippable equippable in sameTimeItems)
                 {
+                    if (equippable.IsEquipped == true)
+                    {
+                        //remove points from previous equipped
+                        this.RemovePointsFromHeroPoints((Item)equippable);
+                    }
                     equippable.IsEquipped = false;
                 }
 

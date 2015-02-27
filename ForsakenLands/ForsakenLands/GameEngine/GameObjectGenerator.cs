@@ -41,14 +41,14 @@ namespace ForsakenLands.GameEngine
 
             switch (itemName)
             {
-                case "Boots": return new Boots("Boots", false);
-                case "Chest": return new Chest("Chest", false);
-                case "Helmet": return new Helmet("Helmet", false);
-                case "HealthPotion": return new HealthPotion("HealthPotion");
-                case "ManaPotion": return new ManaPotion("ManaPotion");
-                case "Dagger": return new Dagger("Dagger", false);
-                case "Staff": return new Staff("Staff", false);
-                case "Sword": return new Sword("Sword", false);  
+                case "Boots": return new Boots();
+                case "Chest": return new Chest();
+                case "Helmet": return new Helmet();
+                case "HealthPotion": return new HealthPotion();
+                case "ManaPotion": return new ManaPotion();
+                case "Dagger": return new Dagger();
+                case "Staff": return new Staff();
+                case "Sword": return new Sword();  
             default:
                     break;
             }

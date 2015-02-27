@@ -1,4 +1,5 @@
 ﻿using ForsakenLands.Characters;
+using ForsakenLands.Items;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ namespace ForsakenLands.GameEngine
 {
     public class BattleManager
     {
-        public static void StartBattle(Hero hero, Monster monster) {
+        public static void StartBattle(Hero hero, Monster monster, Item item) {
             int round = 1;
             Console.WriteLine("You will attack {0}", monster.GetType().Name);
 
@@ -33,6 +34,9 @@ namespace ForsakenLands.GameEngine
             if (monster.HealthPoints == 0)
             {
                 Console.WriteLine("You kill the {0}!", monster.GetType().Name);
+                Console.WriteLine("You win the {0}!", item);
+                hero.AddItemToInventory(item);
+                hero.UseItem(hero.ItemInventory.Count-1);
             }
             else
             {

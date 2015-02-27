@@ -3,17 +3,14 @@
     using ForsakenLands;
     using ForsakenLands.Interfaces;
     using System;
+    using System.Text;
 
-    public abstract class Item : GameObject, IBaseProperties, ILevelable
+    public abstract class Item : GameObject, IBaseProperties
     {
-        private const int INNITIAL_LEVEL = 1;
-        protected const double STAT_AND_EXP_MODIFIER_FROM_LEVEL = 0.2;
-
         private int attackPoints;
         private int defencePoints;
         private int healthPoints;
         private int manaPoints;
-        private int level;
 
         public Item(string name, int attackPoints, int defencePoints, int healthPoints, int manaPoints)
             : base()
@@ -23,7 +20,6 @@
             this.DefencePoints = defencePoints;
             this.HealthPoints = healthPoints;
             this.ManaPoints = manaPoints;
-            this.Level = INNITIAL_LEVEL;
         }
 
         public string Name { get; set; }
@@ -38,7 +34,7 @@
                     throw new ArgumentNullException("value", "The atack points can't be negative!");
                 }
 
-                this.attackPoints = CalculateStatAccordingToLevel(value);
+                this.attackPoints = value;
             }
         }
 
@@ -52,7 +48,7 @@
                     throw new ArgumentNullException("value", "The defense points can't be negative!");
                 }
 
-                this.defencePoints = CalculateStatAccordingToLevel(value);
+                this.defencePoints = value;
             }
         }
 
@@ -66,7 +62,7 @@
                     throw new ArgumentNullException("value", "The health points can't be negative!");
                 }
 
-                this.healthPoints = CalculateStatAccordingToLevel(value);
+                this.healthPoints = value;
             }
         }
 
@@ -80,33 +76,36 @@
                     throw new ArgumentNullException("value", "The mana points can't be negative!");
                 }
 
-                this.manaPoints = CalculateStatAccordingToLevel(value);
+                this.manaPoints = value;
             }
         }
 
-        public int Level
+        public override string ToString()
         {
-            get
+            StringBuilder itemString = new StringBuilder();
+            itemString.Append(this.GetType().Name);
+
+            if (this.attackPoints > 0)
             {
-                return this.level;
+                itemString.Append(String.Format(" Attack Points: {0}", this.attackPoints));
             }
 
-            protected set
+            if (this.defencePoints > 0)
             {
-                if (value < 0)
-                {
-                    throw new ArgumentException("value", "Hero level cannot be a negative number.");
-                }
-
-                this.level = value;
+                itemString.Append(String.Format(" Defense Points: {0}", this.defencePoints));
             }
-        }
 
-        public int CalculateStatAccordingToLevel(int stat)
-        {
-            int statScaledWithLevel = stat + Convert.ToInt32(stat * STAT_AND_EXP_MODIFIER_FROM_LEVEL) * this.Level;
+            if (this.manaPoints > 0)
+            {
+                itemString.Append(String.Format(" Mana Points: {0}", this.manaPoints));
+            }
 
-            return statScaledWithLevel;
+            if (this.healthPoints > 0)
+            {
+                itemString.Append(String.Format(" Health Points: {0}", this.healthPoints));
+            }
+
+            return itemString.ToString();
         }
     }
 }

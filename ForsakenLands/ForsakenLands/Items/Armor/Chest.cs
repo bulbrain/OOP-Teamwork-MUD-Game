@@ -2,8 +2,8 @@
 {
     public class Chest : Armor
     {
-        public Chest(string name, bool isEquipped = false)
-            : base(name, isEquipped)
+        public Chest(string name = null)
+            : base(name)
         {
         }
     }
