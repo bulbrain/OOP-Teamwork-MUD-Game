@@ -24,25 +24,25 @@
             int manaPoints)
             : base()
         {
-            this.AttackPoints = attackPoints;
-            this.DefencePoints = defencePoints;
-            this.HealthPoints = healthPoints;
-            this.ManaPoints = manaPoints;
             this.Level = INNITIAL_LEVEL;
+            this.AttackPoints = CalculateStatAccordingToLevel(attackPoints);
+            this.DefencePoints = CalculateStatAccordingToLevel(defencePoints);
+            this.HealthPoints = CalculateStatAccordingToLevel(healthPoints);
+            this.ManaPoints = CalculateStatAccordingToLevel(manaPoints);
         }
 
-        public int AttackPoints 
-        { 
+        public int AttackPoints
+        {
             get { return this.attackPoints; }
 
-            set 
+            set
             {
                 if (value < 0)
                 {
                     throw new ArgumentNullException("value", "The atack points can't be negative!");
                 }
 
-                this.attackPoints = CalculateStatAccordingToLevel(value);
+                this.attackPoints = value;
             }
         }
 
@@ -57,7 +57,7 @@
                     throw new ArgumentNullException("value", "The defense points can't be negative!");
                 }
 
-                this.defencePoints = CalculateStatAccordingToLevel(value);
+                this.defencePoints = value;
             }
         }
 
@@ -72,7 +72,7 @@
                     throw new ArgumentNullException("value", "The health points can't be negative!");
                 }
 
-                this.healthPoints = CalculateStatAccordingToLevel(value);
+                this.healthPoints = value;
             }
         }
 
@@ -87,7 +87,7 @@
                     throw new ArgumentNullException("value", "The mana points can't be negative!");
                 }
 
-                this.manaPoints = CalculateStatAccordingToLevel(value);
+                this.manaPoints = value;
             }
         }
 
@@ -112,9 +112,15 @@
 
         public int CalculateStatAccordingToLevel(int stat)
         {
-            int statScaledWithLevel = stat + Convert.ToInt32(stat * STAT_AND_EXP_MODIFIER_FROM_LEVEL) * this.Level;
-
-            return statScaledWithLevel;
+            if (this.Level == 1)
+            {
+                return stat;
+            }
+            else
+            {
+                int statScaledWithLevel = stat + Convert.ToInt32(stat * STAT_AND_EXP_MODIFIER_FROM_LEVEL) * (this.Level - 1);
+                return statScaledWithLevel;
+            }
         }
 
     }
