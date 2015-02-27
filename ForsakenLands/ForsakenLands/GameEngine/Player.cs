@@ -2,10 +2,11 @@
 {
     using System;
     using System.IO;
-
+    
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
     using ForsakenLands.Characters;
+    using ForsakenLands.CustomException;
     using ForsakenLands.Characters.Heros;
     using System.Web;
 
@@ -33,7 +34,7 @@
             {
                 if (string.IsNullOrEmpty(value) || value.Length < 3)
                 {
-                    throw new ArgumentNullException("Invalid name");
+                    throw new InvalidUserInputException("Invalid name");
                 }
 
                 this.name = value;
@@ -51,7 +52,7 @@
             {
                 if (string.IsNullOrEmpty(value) || value.Length < 6)
                 {
-                    throw new ArgumentNullException("value", "Password should be non-empty and at least 6 symbols");
+                    throw new InvalidUserInputException("Password should be non-empty and at least 6 symbols");
                 }
 
                 this.password = MD5Password.GetMd5Hash(value);
@@ -85,7 +86,7 @@
                 {
                     player = new Player(heroName, heroPassword);
                 }
-                catch (ArgumentNullException)
+                catch (InvalidUserInputException)
                 {
                     Console.WriteLine("The hero name must be at least 3 symbols and the password must be at least 6 symbols.");
                 }
@@ -96,7 +97,7 @@
                 {
                     player = Player.GetOldPlayer(heroName, heroPassword);
                 }
-                catch (ArgumentNullException)
+                catch (InvalidUserInputException)
                 {
                     Console.WriteLine("Player with these name and password is not found.");
                 }
