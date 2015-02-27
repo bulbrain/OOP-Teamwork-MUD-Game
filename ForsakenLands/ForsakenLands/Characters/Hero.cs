@@ -8,7 +8,7 @@
     using System.Linq;
     using ForsakenLands.Interfaces;
 
-    public abstract class Hero : Character, IInventoriable, IExperiancable
+    public class Hero : Character, IInventoriable, IExperiancable
     {
         private const int INNITIAL_EXPERIENCE = 0;
         private const int ExperienceToLevelTwo = 100;

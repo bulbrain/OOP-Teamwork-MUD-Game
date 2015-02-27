@@ -5,7 +5,7 @@
     using System;
     using System.Text;
 
-    public abstract class Item : GameObject, IBaseAttributable
+    public class Item : GameObject, IBaseAttributable
     {
         private int attackPoints;
         private int defencePoints;
