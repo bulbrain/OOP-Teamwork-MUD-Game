@@ -1,5 +1,7 @@
 ﻿using ForsakenLands.Characters;
+using ForsakenLands.Interfaces;
 using ForsakenLands.Items;
+using ForsakenLands.Items.Potion;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +14,7 @@ namespace ForsakenLands.GameEngine
         public static void StartBattle(Hero hero, Monster monster, Item item) {
             int round = 1;
 
-            while (hero.HealthPoints > 0 && monster.HealthPoints > 0)
+            while (hero.CurrentHealthPoints > 0 && monster.CurrentHealthPoints > 0)
             {
                 Console.WriteLine();
                 Console.WriteLine("Round: {0}", round);
@@ -31,7 +33,7 @@ namespace ForsakenLands.GameEngine
                 round++;
             }
 
-            if (monster.HealthPoints == 0)
+            if (monster.CurrentHealthPoints == 0)
             {
                 Console.WriteLine("-------------------------------------------");
                 Console.WriteLine("You kill the {0}!", monster.GetType().Name);
@@ -62,13 +64,13 @@ namespace ForsakenLands.GameEngine
         {
             if (defender.DefencePoints < straker.AttackPoints)
             {
-                if ((straker.AttackPoints - defender.DefencePoints) < defender.HealthPoints)
+                if ((straker.AttackPoints - defender.DefencePoints) < defender.CurrentHealthPoints)
                 {
-                    defender.HealthPoints -= (straker.AttackPoints - defender.DefencePoints);
+                    defender.CurrentHealthPoints -= (straker.AttackPoints - defender.DefencePoints);
                 }
                 else
                 {
-                    defender.HealthPoints = 0;
+                    defender.CurrentHealthPoints = 0;
                 }
                 
             }
@@ -78,13 +80,13 @@ namespace ForsakenLands.GameEngine
         {
             if (defender.DefencePoints < wizard.ManaPoints)
             {
-                if ((wizard.ManaPoints - defender.DefencePoints) < defender.HealthPoints)
+                if ((wizard.ManaPoints - defender.DefencePoints) < defender.CurrentHealthPoints)
                 {
-                    defender.HealthPoints -= (wizard.ManaPoints - defender.DefencePoints);
+                    defender.CurrentHealthPoints -= (wizard.ManaPoints - defender.DefencePoints);
                 }
                 else
                 {
-                    defender.HealthPoints = 0;
+                    defender.CurrentHealthPoints = 0;
                 }
                 
             }
@@ -113,7 +115,7 @@ namespace ForsakenLands.GameEngine
             Console.WriteLine("Mana Points: {0} Mana Points: {1}", hero.ManaPoints, monster.ManaPoints);
             Console.WriteLine("Attack Points: {0} Attack Points: {1}", hero.AttackPoints, monster.AttackPoints);
             Console.WriteLine("Defence Points: {0} Defence Points: {1}", hero.DefencePoints, monster.DefencePoints);
-            Console.WriteLine("Health Points: {0} Health Points: {1}", hero.HealthPoints, monster.HealthPoints);
+            Console.WriteLine("Health Points: {0} Health Points: {1}", hero.CurrentHealthPoints, monster.CurrentHealthPoints);
         }
     }
 }

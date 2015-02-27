@@ -2,8 +2,8 @@
 {
     public interface IConsumable
     {
-        int HealthPoints { get; set; }
+        int HealthToRestore { get; set; }
 
-        int ManaPoints { get; set; }
+        int ManaToRestore { get; set; }
     }
 }

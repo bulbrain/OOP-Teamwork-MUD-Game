@@ -1,6 +1,6 @@
 ﻿namespace ForsakenLands.Interfaces
 {
-    public interface IBaseProperties
+    public interface IBaseAttributable
     {
         int AttackPoints { get; }
 

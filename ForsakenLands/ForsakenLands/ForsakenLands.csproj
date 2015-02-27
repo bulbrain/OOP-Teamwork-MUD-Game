@@ -73,7 +73,7 @@
     <Compile Include="GUI\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\IBaseProperties.cs" />
+    <Compile Include="Interfaces\IBaseAttributable.cs" />
     <Compile Include="Characters\Heros\Assassin.cs" />
     <Compile Include="Characters\Character.cs" />
     <Compile Include="Characters\Hero.cs" />
@@ -106,7 +106,7 @@
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IConsumable.cs" />
-    <Compile Include="Interfaces\IDynamicProperties.cs" />
+    <Compile Include="Interfaces\IDynamicAttributable.cs" />
     <Compile Include="Interfaces\IEquippable.cs" />
     <Compile Include="Interfaces\IExperiencable.cs" />
     <Compile Include="Interfaces\IExperienceAwardable.cs" />

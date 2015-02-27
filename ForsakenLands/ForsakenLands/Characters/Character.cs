@@ -6,7 +6,7 @@
     using System.Text;
     using ForsakenLands.Interfaces;
 
-    public abstract class Character : GameObject, IBaseProperties, ILevelable
+    public abstract class Character : GameObject, IBaseAttributable, ILevelable
     {
         private const int INNITIAL_LEVEL = 1;
         protected const double STAT_AND_EXP_MODIFIER_FROM_LEVEL = 0.2;
@@ -16,6 +16,8 @@
         private int healthPoints;
         private int manaPoints;
         private int level;
+        private int currentHealthPoints;
+        private int currentManaPoints;
 
         public Character(
             int attackPoints,
@@ -29,6 +31,8 @@
             this.DefencePoints = CalculateStatAccordingToLevel(defencePoints);
             this.HealthPoints = CalculateStatAccordingToLevel(healthPoints);
             this.ManaPoints = CalculateStatAccordingToLevel(manaPoints);
+            this.CurrentHealthPoints = this.HealthPoints;
+            this.CurrentManaPoints = this.ManaPoints;
         }
 
         public int AttackPoints
@@ -106,6 +110,32 @@
                 }
 
                 this.level = value;
+            }
+        }
+
+        public int CurrentHealthPoints
+        {
+            get
+            {
+                return this.currentHealthPoints;
+            }
+
+            set
+            {
+                this.currentHealthPoints = value;
+            }
+        }
+
+        public int CurrentManaPoints
+        {
+            get
+            {
+                return this.currentManaPoints;
+            }
+
+            set
+            {
+                this.currentManaPoints = value;
             }
         }
 

@@ -125,32 +125,42 @@
                 throw new ArgumentOutOfRangeException("Invalid Item Inventory Index.");
             }
 
-            // add item stats to hero stats
-            Item currentItem = this.ItemInventory[itemIndex];
-            this.AddPointsToHeroPoints(currentItem);
-
             if (this.ItemInventory[itemIndex] is IConsumable)
             {
+                IConsumable itemToConsume = (IConsumable)this.ItemInventory[itemIndex];
+                this.ConsumeItem(itemToConsume);
+
                 // remove item from inventory after it has been consumed
                 this.ItemInventory.RemoveAt(itemIndex);
             }
             else if (this.ItemInventory[itemIndex] is IEquippable)
             {
                 var itemToEquip = (IEquippable)this.ItemInventory[itemIndex];
-                var itemToEquipType = itemToEquip.GetType();
-
-                var sameTypeItems = this.itemInventory.Where(item => item.GetType().Name == itemToEquip.GetType().Name);
+                string itemToEquipType;
+                if (itemToEquip.GetType().BaseType.Name == "Weapon")
+                {
+                    itemToEquipType = "Weapon";
+                }
+                else
+                {
+                    itemToEquipType = itemToEquip.GetType().Name.ToString();
+                }
+                
+                var sameTypeItems = 
+                    this.itemInventory
+                    .Where(item => item.GetType().ToString().Contains(itemToEquipType));
                    
                 foreach (IEquippable equippable in sameTypeItems)
                 {
                     if (equippable.IsEquipped == true)
                     {
                         //remove points from previous equipped
-                        this.RemovePointsFromHeroPoints((Item)equippable);
+                        this.UequipItem((Item)equippable);
                     }
                     equippable.IsEquipped = false;
                 }
 
+                this.EquipItem((Item)itemToEquip);
                 itemToEquip.IsEquipped = true;
             }
         }
@@ -175,7 +185,7 @@
             return hero;
         }
 
-        private void AddPointsToHeroPoints(Item item)
+        private void EquipItem(Item item)
         {
             this.AttackPoints += item.AttackPoints;
             this.DefencePoints += item.DefencePoints;
@@ -183,12 +193,35 @@
             this.HealthPoints += item.HealthPoints;
         }
 
-        private void RemovePointsFromHeroPoints(Item item)
+        private void UequipItem(Item item)
         {
             this.AttackPoints -= item.AttackPoints;
             this.DefencePoints -= item.DefencePoints;
             this.ManaPoints -= item.ManaPoints;
             this.HealthPoints -= item.HealthPoints;
+        }
+
+        private void ConsumeItem(IConsumable consumable)
+        {
+            // restore health
+            if (this.CurrentHealthPoints + consumable.HealthToRestore > this.HealthPoints)
+            {
+                this.CurrentHealthPoints = this.HealthPoints; 
+            }
+            else
+            {
+                this.CurrentHealthPoints += consumable.HealthToRestore;
+            }
+
+            //restore mana
+            if (this.CurrentManaPoints + consumable.ManaToRestore > this.ManaPoints)
+            {
+                this.CurrentManaPoints = this.ManaPoints;
+            }
+            else
+            {
+                this.CurrentManaPoints += consumable.ManaToRestore;
+            }
         }
 
         /// <summary>
