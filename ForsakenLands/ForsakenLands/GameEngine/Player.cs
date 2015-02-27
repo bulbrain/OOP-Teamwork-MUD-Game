@@ -102,9 +102,9 @@
                 {
                     player = Player.GetOldPlayer(heroName, heroPassword);
                 }
-                catch (InvalidUserInputException)
+                catch (InvalidUserInputException e)
                 {
-                    Console.WriteLine("Player with these name and password is not found.");
+                    Console.WriteLine(e.Message);
                 }
             }
 
@@ -130,7 +130,7 @@
                 }
             }
 
-            throw new ArgumentNullException("Not found");
+            throw new InvalidUserInputException("Player with these name and password is not found.");
         }
 
         private static bool CheckForUsedUserName(string heroName)

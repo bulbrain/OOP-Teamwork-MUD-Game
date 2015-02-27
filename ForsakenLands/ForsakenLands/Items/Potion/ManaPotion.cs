@@ -1,4 +1,5 @@
-﻿namespace ForsakenLands.Items.Potion
+﻿using System.Text;
+namespace ForsakenLands.Items.Potion
 {
     class ManaPotion : Potion
     {
@@ -7,6 +8,14 @@
         public ManaPotion(string name = null)
             : base(0, ManaRestored, name)
         {
+        }
+
+        public override string ToString()
+        {
+            StringBuilder potionString = new StringBuilder();
+            potionString.Append(base.ToString());
+            potionString.Append(" Restore Points " + ManaRestored);
+            return potionString.ToString();
         }
     }
 }

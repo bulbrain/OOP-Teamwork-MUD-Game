@@ -111,7 +111,7 @@ namespace ForsakenLands.GameEngine
 
         private static void PrintProperties(Hero hero, Monster monster)
         {
-            Console.WriteLine("Hero Type: {0} Monster Type: {1}",hero.GetType().Name, monster.GetType().Name);
+            Console.WriteLine("Hero Type: {0} Monster Type: {1}",hero.HeroType, monster.GetType().Name);
             Console.WriteLine("Mana Points: {0} Mana Points: {1}", hero.ManaPoints, monster.ManaPoints);
             Console.WriteLine("Attack Points: {0} Attack Points: {1}", hero.AttackPoints, monster.AttackPoints);
             Console.WriteLine("Defence Points: {0} Defence Points: {1}", hero.DefencePoints, monster.DefencePoints);
