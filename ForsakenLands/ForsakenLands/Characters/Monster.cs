@@ -3,7 +3,7 @@
     using System;
     using ForsakenLands.Interfaces;
 
-    public class Monster : Character, IExperienceAwardable
+    public abstract class Monster : Character, IExperienceAwardable
     {
         // Use a constant for base value in case we want to scale the awarded exp with monster level in the future
         private const int BASE_AWARDED_EXPERIENCE = 50;
