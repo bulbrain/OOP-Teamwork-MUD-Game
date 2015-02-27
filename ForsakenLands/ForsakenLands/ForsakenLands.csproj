@@ -64,6 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Characters\HealthChangedEventArgs.cs" />
     <Compile Include="Characters\Monsters\MonsterType.cs" />
     <Compile Include="CustomException\InvalidUserInputException.cs" />
     <Compile Include="GameEngine\GameObjectGenerator.cs" />

@@ -7,6 +7,7 @@ namespace ForsakenLands.GameEngine
     using ForsakenLands.Items;
     using System;
     using System.Windows.Forms;
+    using System.Threading.Tasks;
 
     public class Engine
     {
@@ -63,6 +64,11 @@ namespace ForsakenLands.GameEngine
         {
             HeroType heroType = ChooseHeroType();
             Hero hero = Hero.CreateHeroByType(heroType);
+            hero.HealthChanged += (sender, eventArgs) =>
+            {
+                Console.WriteLine("Be carafull you have only {0} health points!!!!!!!!!!!!!!!!",
+                    eventArgs.NewHealthPoints);
+            };
             player.Hero = hero;
         }
 

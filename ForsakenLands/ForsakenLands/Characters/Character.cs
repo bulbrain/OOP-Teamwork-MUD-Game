@@ -1,10 +1,13 @@
 ﻿namespace ForsakenLands.Characters
 {
     using System;
+    using System.Threading.Tasks;
 
     using ForsakenLands;
     using System.Text;
     using ForsakenLands.Interfaces;
+
+    internal delegate void ChangedEventHandler(object sender, HealthChangedEventArgs e);
 
     public abstract class Character : GameObject, IBaseAttributable, ILevelable
     {
@@ -18,6 +21,8 @@
         private int level;
         private int currentHealthPoints;
         private int currentManaPoints;
+
+        internal event ChangedEventHandler HealthChanged;
 
         public Character(
             int attackPoints,
@@ -123,6 +128,11 @@
             set
             {
                 this.currentHealthPoints = value;
+                
+                if (value < 30)
+                {
+                    this.OnChanged(new HealthChangedEventArgs(value));
+                }
             }
         }
 
@@ -151,6 +161,14 @@
                 int statScaledWithLevel = stat + Convert.ToInt32(stat * STAT_AND_EXP_MODIFIER_FROM_LEVEL) * (this.Level - 1);
                 return statScaledWithLevel;
             }
+        }
+
+        internal virtual void OnChanged(HealthChangedEventArgs e)
+        {
+            if (this.HealthChanged != null)
+            {
+                HealthChanged(this, e);
+           }
         }
 
     }
