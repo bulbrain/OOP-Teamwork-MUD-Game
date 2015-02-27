@@ -5,7 +5,7 @@
     using System;
     using System.Text;
 
-    public abstract class Item : GameObject, IBaseProperties
+    public class Item : GameObject, IBaseProperties
     {
         private int attackPoints;
         private int defencePoints;
@@ -83,7 +83,7 @@
         public override string ToString()
         {
             StringBuilder itemString = new StringBuilder();
-            itemString.Append(this.GetType().Name);
+            itemString.Append(this.GetType().Name + " with");
 
             if (this.attackPoints > 0)
             {

@@ -177,6 +177,8 @@ namespace ForsakenLands.GameEngine
                 Console.WriteLine("Welcome to Room number: {0}", currentRoom.RoomNumber);
                 currentRoom.Monster = GameObjectGenerator.GenerateMonster();
                 currentRoom.Item = GameObjectGenerator.GenerateItem();
+                Console.WriteLine("You will attack {0} in this room!", currentRoom.Monster.GetType().Name);
+                Console.WriteLine("If you kill him, you will get {0}", currentRoom.Item);
                 BattleManager.StartBattle(player.Hero, currentRoom.Monster, currentRoom.Item);
                 wantsToContinue = WantsToContinue();
             }

@@ -84,11 +84,16 @@
             {
                 try
                 {
+                    if (Player.CheckForUsedUserName(heroName))
+                    {
+                        throw new InvalidUserInputException("User name is already use. Please try another one.");
+                    }
+                    
                     player = new Player(heroName, heroPassword);
                 }
-                catch (InvalidUserInputException)
+                catch (InvalidUserInputException e)
                 {
-                    Console.WriteLine("The hero name must be at least 3 symbols and the password must be at least 6 symbols.");
+                    Console.WriteLine(e.Message);
                 }
             }
             else
@@ -126,6 +131,25 @@
             }
 
             throw new ArgumentNullException("Not found");
+        }
+
+        private static bool CheckForUsedUserName(string heroName)
+        {
+            if (Directory.Exists(DIRECTORY_PATH))
+            {
+                string[] fileNames = Directory.GetFiles(DIRECTORY_PATH);
+                foreach (var fileName in fileNames)
+                {
+                    string fileContent = File.ReadAllText(fileName);
+                    dynamic data = JObject.Parse(fileContent);
+                    if (heroName.CompareTo((string)data.Name) == 0)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
         }
 
         public void CreatePlayerFile()

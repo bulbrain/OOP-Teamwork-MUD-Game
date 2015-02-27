@@ -11,7 +11,6 @@ namespace ForsakenLands.GameEngine
     {
         public static void StartBattle(Hero hero, Monster monster, Item item) {
             int round = 1;
-            Console.WriteLine("You will attack {0}", monster.GetType().Name);
 
             while (hero.HealthPoints > 0 && monster.HealthPoints > 0)
             {

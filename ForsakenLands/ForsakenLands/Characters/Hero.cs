@@ -139,13 +139,9 @@
                 var itemToEquip = (IEquippable)this.ItemInventory[itemIndex];
                 var itemToEquipType = itemToEquip.GetType();
 
-                // Unequip items of the same type
-                var sameTimeItems =
-                    from item in this.ItemInventory
-                    where item.GetType().Name == itemToEquip.GetType().Name
-                    select item;
-
-                foreach (IEquippable equippable in sameTimeItems)
+                var sameTypeItems = this.itemInventory.Where(item => item.GetType().Name == itemToEquip.GetType().Name);
+                   
+                foreach (IEquippable equippable in sameTypeItems)
                 {
                     if (equippable.IsEquipped == true)
                     {

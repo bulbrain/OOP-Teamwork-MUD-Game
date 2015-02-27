@@ -17,7 +17,7 @@ namespace ForsakenLands.GameEngine
 
         public static Monster GenerateMonster()
         {
-            int monsterNumber = rnd.Next(0, 3);
+            int monsterNumber = GameObjectGenerator.rnd.Next(0, 3);
 
             string monsterName = Enum.GetName(typeof(MonsterType), monsterNumber);
 
@@ -35,8 +35,7 @@ namespace ForsakenLands.GameEngine
 
         public static Item GenerateItem()
         {
-            Random rnd = new Random();
-            int itemNumber = rnd.Next(0, 8);
+            int itemNumber = GameObjectGenerator.rnd.Next(0, 8);
             string itemName = Enum.GetName(typeof(ItemType), itemNumber);
 
             switch (itemName)
