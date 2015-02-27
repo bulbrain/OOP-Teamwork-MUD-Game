@@ -64,8 +64,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Attributes\Attribute.cs" />
-    <Compile Include="Attributes\IAttribute.cs" />
     <Compile Include="Characters\Monsters\MonsterType.cs" />
     <Compile Include="CustomException\InvalidUserInputException.cs" />
     <Compile Include="GameEngine\GameObjectGenerator.cs" />

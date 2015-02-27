@@ -4,48 +4,33 @@
      ﻿using System.Collections.Generic;
 
      using Items;
+     using ForsakenLands.Characters;
 
      public class Room : GameObject
      {
-         private const byte ROOM_MAX_ITEMS = 4;
-         private const byte ROOM_MAX_ENEMIES = 4;
+         private static List<int> roomNumbers = new List<int>();
+         private int roomNumber;
 
-         public Room(string name, RoomType roomType, uint southExit, uint northExit, uint westExit, uint eastExit)
+         public Room()
              : base()
          {
-             this.Name = name;
-             this.RoomType = roomType;
-             this.SouthExit = southExit;
-             this.NorthExit = northExit;
-             this.WestExit = westExit;
-             this.EastExit = eastExit;
+             this.RoomNumber = 0;
          }
 
-         public string Name { get; private set; } 
-
-         // It might be smarter to hold all the exits in a consolidated data structure
-         public uint SouthExit { get; private set; }
-         
-         public uint NorthExit { get; private set; }
-         
-         public uint WestExit { get; private set; }
-         
-         public uint EastExit { get; private set; }
-         
-         public RoomType RoomType { get; private set; }
-         
-         public List<Item> RoomItems { get; private set; }
-
-         public void AddItemToRoom(Item item)
-         {
-             if (this.RoomItems.Count < ROOM_MAX_ITEMS)
-             {
-                 this.RoomItems.Add(item);
+         public int RoomNumber 
+         { 
+             get 
+             { 
+                 return this.roomNumber; 
              }
-             else
-             {
-                 throw new NotImplementedException("Needs to be implemented");
+             set {
+                 this.roomNumber = roomNumbers.Count;
+                 Room.roomNumbers.Add(this.roomNumber);
              }
          }
+
+         public Item Item { get; set; }
+
+         public Monster Monster { get; set; } 
      }
  }

@@ -171,9 +171,13 @@ namespace ForsakenLands.GameEngine
 
             while (wantsToContinue && player.Hero.HealthPoints > 0)
             {
-                Monster monster = GameObjectGenerator.GenerateMonster();
-                Item item = GameObjectGenerator.GenerateItem();
-                BattleManager.StartBattle(player.Hero, monster, item);
+                Room currentRoom = new
+                    Room();
+                Console.WriteLine("----------------------------------------------------");
+                Console.WriteLine("Welcome to Room number: {0}", currentRoom.RoomNumber);
+                currentRoom.Monster = GameObjectGenerator.GenerateMonster();
+                currentRoom.Item = GameObjectGenerator.GenerateItem();
+                BattleManager.StartBattle(player.Hero, currentRoom.Monster, currentRoom.Item);
                 wantsToContinue = WantsToContinue();
             }
         }

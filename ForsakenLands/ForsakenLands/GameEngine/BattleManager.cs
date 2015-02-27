@@ -15,6 +15,7 @@ namespace ForsakenLands.GameEngine
 
             while (hero.HealthPoints > 0 && monster.HealthPoints > 0)
             {
+                Console.WriteLine();
                 Console.WriteLine("Round: {0}", round);
                 PrintProperties(hero, monster);
 
@@ -33,8 +34,10 @@ namespace ForsakenLands.GameEngine
 
             if (monster.HealthPoints == 0)
             {
+                Console.WriteLine("-------------------------------------------");
                 Console.WriteLine("You kill the {0}!", monster.GetType().Name);
                 Console.WriteLine("You win the {0}!", item);
+                Console.WriteLine("-------------------------------------------");
                 hero.AddItemToInventory(item);
                 hero.UseItem(hero.ItemInventory.Count-1);
             }
