@@ -169,7 +169,7 @@ namespace ForsakenLands.GameEngine
         {
             bool wantsToContinue = true;
 
-            while (wantsToContinue && player.Hero.HealthPoints > 0)
+            while (wantsToContinue && player.Hero.CurrentHealthPoints > 0)
             {
                 Room currentRoom = new
                     Room();
@@ -180,7 +180,11 @@ namespace ForsakenLands.GameEngine
                 Console.WriteLine("You will attack {0} in this room!", currentRoom.Monster.GetType().Name);
                 Console.WriteLine("If you kill him, you will get {0}", currentRoom.Item);
                 BattleManager.StartBattle(player.Hero, currentRoom.Monster, currentRoom.Item);
-                wantsToContinue = WantsToContinue();
+                
+                if (player.Hero.CurrentHealthPoints > 0)
+                {
+                    wantsToContinue = this.WantsToContinue();                   
+                }
             }
         }
 
@@ -188,9 +192,16 @@ namespace ForsakenLands.GameEngine
         {
             if (player != null)
             {
-                if (WantsToSave())
+                if (player.Hero.CurrentHealthPoints > 0)
                 {
-                    Player.SavePlayer(player);
+                    if (this.WantsToSave())
+                    {
+                        Player.SavePlayer(player);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("You can log in again to try to kill some monsters with your last saved state.");
                 }
             }
 
